@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager i; 
     public GameSettings settings;
 
+    public LeftDrum leftDrum;
+
     public float FillPercent {
         get { return fillPercent; }
         set { 
@@ -44,15 +46,18 @@ public class GameManager : MonoBehaviour
         i = this;
         State = GameState.MAIN_MENU;
         settings = new GameSettings();
+        leftDrum = GameObject.Find("Left Drum").GetComponent<LeftDrum>();
     }
 
     void Update() {
+        Debug.Log(fillPercent);
         Decay();
     }
 
     void Decay() {
-        if(fillPercent > 0) {
-            fillPercent -= Time.deltaTime * settings.decay;
+        fillPercent -= Time.deltaTime * settings.decay;
+        if(fillPercent < 0) {
+            fillPercent = 0;
         }
     }
 

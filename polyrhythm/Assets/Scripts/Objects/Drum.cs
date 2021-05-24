@@ -20,6 +20,7 @@ public class Drum : MonoBehaviour
     public void Activate() {
         StartCoroutine("HoldWindowOpen");
         wasHit = false;
+        visuals.OnActivate();
     }
 
     public virtual void OnPress() {
@@ -27,6 +28,7 @@ public class Drum : MonoBehaviour
         if(active) {
             OnHit();
         } else {
+            //StartCoroutine("HoldHit");
             OnMiss();
         }
     }
@@ -34,17 +36,20 @@ public class Drum : MonoBehaviour
     public virtual void OnMiss() {
         GameManager.i.subtractFillMiss();
         visuals.OnMiss();
+        Debug.Log("Miss");
     }
 
     public virtual void OnHit() {
         GameManager.i.addFill();
         wasHit = true;
         visuals.OnHit();
+        Debug.Log("Hit");
     }
 
     public virtual void OnPass() {
         GameManager.i.subtractFillPass();
         visuals.OnPass();
+        Debug.Log("Pass");
     }
 
     IEnumerator HoldWindowOpen() {
@@ -54,5 +59,17 @@ public class Drum : MonoBehaviour
         if(!wasHit) {
             OnPass();
         }
+    }
+
+    IEnumerator HoldHit() {
+        float timeElapsed = 0;
+        while(timeElapsed < GameManager.i.settings.earlyDelay) {
+            if(active) {
+                OnHit();
+                yield break;
+            }
+            timeElapsed += Time.deltaTime;
+        }
+        OnMiss();
     }
 }

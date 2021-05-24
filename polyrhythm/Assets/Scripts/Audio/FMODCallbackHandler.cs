@@ -21,14 +21,15 @@ public class FMODCallbackHandler : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    public void Begin(FMOD.Studio.EventInstance music) {
         timelineInfo = new TimelineInfo();
 
         // Explicitly create the delegate object and assign it to a member so it doesn't get freed
         // by the garbage collected while it's being used
         beatCallback = new FMOD.Studio.EVENT_CALLBACK(BeatEventCallback);
-    }
-
-    public void Begin(FMOD.Studio.EventInstance music) {
         musicInstance = music;
 
         // Pin the class that will store the data modified during the callback
@@ -57,7 +58,6 @@ public class FMODCallbackHandler : MonoBehaviour
     static FMOD.RESULT BeatEventCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr parameterPtr)
     {
         FMOD.Studio.EventInstance instance = new FMOD.Studio.EventInstance(instancePtr);
-
         // Retrieve the user data
         IntPtr timelineInfoPtr;
         FMOD.RESULT result = instance.getUserData(out timelineInfoPtr);
@@ -86,7 +86,6 @@ public class FMODCallbackHandler : MonoBehaviour
                     }
                     break;
             }
-            Debug.Log((string)timelineInfo.lastMarker);
             CallbackParser.Parse((string)timelineInfo.lastMarker);
         }
         return FMOD.RESULT.OK;
