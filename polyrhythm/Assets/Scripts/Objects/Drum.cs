@@ -8,7 +8,9 @@ public class Drum : MonoBehaviour
     public DrumType drumType = DrumType.Left;
     public DrumVisuals visuals;
     private bool active = false;
-    private bool wasHit = true;
+    private int activeNotes = 0;
+    private int hits = 0;
+
 
     
     // Start is called before the first frame update
@@ -19,7 +21,6 @@ public class Drum : MonoBehaviour
 
     public void Activate() {
         StartCoroutine("HoldWindowOpen");
-        wasHit = false;
         visuals.OnActivate();
     }
 
@@ -41,8 +42,9 @@ public class Drum : MonoBehaviour
 
     public virtual void OnHit() {
         GameManager.i.addFill();
-        wasHit = true;
+        hits++;
         visuals.OnHit();
+        active = false;
         Debug.Log("Hit");
     }
 
@@ -54,10 +56,14 @@ public class Drum : MonoBehaviour
 
     IEnumerator HoldWindowOpen() {
         active = true;
+        activeNotes++;
         yield return new WaitForSeconds(GameManager.i.settings.window);
-        active = false;
-        if(!wasHit) {
+        activeNotes--;
+        if(activeNotes == 0) active = false;
+        if(hits <= 0) {
             OnPass();
+        } else {
+            hits--;
         }
     }
 

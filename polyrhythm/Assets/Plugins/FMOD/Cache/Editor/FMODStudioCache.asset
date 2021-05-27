@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9053939282021896066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fill Percent
+  m_EditorClassIdentifier: 
+  Name: Fill Percent
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 853264301
+    data2: 1660406265
+  Exists: 1
 --- !u!114 &-8944392539967479981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,7 +59,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8410416095847603372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +80,30 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-6845878020017166377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Intro
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Intro
+  guid: 99ff711a813feb4785e1f690200be7b3
+  Banks:
+  - {fileID: 8023511508196780382}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -272498965515983548}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9600
 --- !u!114 &-6189256822934407491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +163,7 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: -8472339985192680796}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -166,11 +209,10 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: 5130658527621492841}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 710
+  Length: 1291
 --- !u!114 &-2438764331592644826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +292,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-708953641622293171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Intro/Chord
+  m_EditorClassIdentifier: 
+  Name: Chord
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-574168540741548783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,11 +327,11 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637571924100000000
+  lastModified: 637576439080000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 890
+    Value: 1038
   Exists: 1
 --- !u!114 &-547521076477501995
 MonoBehaviour:
@@ -291,6 +353,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-272498965515983548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Intro/Chord
+  m_EditorClassIdentifier: 
+  Name: Chord
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,12 +392,14 @@ MonoBehaviour:
   - {fileID: -3274588481707985342}
   - {fileID: -3477372710104981789}
   - {fileID: -5166878115391807828}
-  EditorParameters: []
+  - {fileID: -6845878020017166377}
+  EditorParameters:
+  - {fileID: -9053939282021896066}
   MasterBanks:
   - {fileID: 8023511508196780382}
   StringsBanks:
   - {fileID: -574168540741548783}
-  stringsBankWriteTime: 637571924100000000
+  stringsBankWriteTime: 637576439080000000
   cacheVersion: 6
 --- !u!114 &647410111141200642
 MonoBehaviour:
@@ -456,7 +540,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6507728580521910463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +597,7 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637571924100000000
+  lastModified: 637576439080000000
   LoadResult: 0
   FileSizes: []
   Exists: 1

@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/MainMusic");
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Intro");
         callbackHandler = GetComponent<FMODCallbackHandler>();
         BeginMusic();
     }

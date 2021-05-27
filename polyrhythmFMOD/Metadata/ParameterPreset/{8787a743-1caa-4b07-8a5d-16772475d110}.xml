@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{8787a743-1caa-4b07-8a5d-16772475d110}">
+		<property name="name">
+			<value>Chord</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eeb5ea6a-be13-47ca-b194-f8a7a834e33b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9cb40f3f-3523-4b78-9e9c-681442c16624}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9cb40f3f-3523-4b78-9e9c-681442c16624}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>5</value>
+		</property>
+		<relationship name="automators">
+			<destination>{6c01432d-fd6c-4fed-a0ca-1ba744577e5f}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{6c01432d-fd6c-4fed-a0ca-1ba744577e5f}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{00ec2c6d-d5bb-438c-b35e-159c964508c0}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{00ec2c6d-d5bb-438c-b35e-159c964508c0}">
+		<relationship name="parameter">
+			<destination>{15b6c08c-7b0d-486d-984f-962f40ece802}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{91772b00-0ec0-42e8-baed-7fad572b1618}</destination>
+			<destination>{9dd00883-af91-4ef7-adae-a850ec5a7bb7}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{91772b00-0ec0-42e8-baed-7fad572b1618}">
+		<property name="position">
+			<value>0.91384180790960456</value>
+		</property>
+		<property name="value">
+			<value>0.00499999989</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9dd00883-af91-4ef7-adae-a850ec5a7bb7}">
+		<property name="position">
+			<value>0.91386264124293792</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

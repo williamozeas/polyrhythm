@@ -26,7 +26,7 @@ public class DrumVisuals : MonoBehaviour
 
     [Header("Outline Extend")]
     public float outlineExtendScale = 3f;
-    private bool outlineExtendSlowing = false;
+    private bool[] outlineExtendSlowing = { false, false, false, false, false };
     public float outlineExtendDuration = 0.7f;
     [SerializeField] private EasingFunction.Ease outlineExtendEase = EasingFunction.Ease.EaseOutCubic;
     private EasingFunction.Function outlineExtendFunction;
@@ -83,16 +83,17 @@ public class DrumVisuals : MonoBehaviour
     private int outlineCounter = 0;
     public void OnActivate() {
         outlineCounter = (outlineCounter + 1) % outlineSpriteRenderers.Length;
-        outlineExtendSlowing = true;
+        outlineExtendSlowing[outlineCounter] = true;
         StartCoroutine("OutlineExtend");
     }
 
     IEnumerator OutlineExtend() {
-        SpriteRenderer outlineSpriteRenderer = outlineSpriteRenderers[outlineCounter];
+        int counter = outlineCounter;
+        SpriteRenderer outlineSpriteRenderer = outlineSpriteRenderers[counter];
         float timeElapsed = 0;
         float speed = 0;
         while(timeElapsed < outlineExtendDuration) {
-            if(outlineExtendSlowing) {
+            if(outlineExtendSlowing[counter]) {
                 float current = outlineExtendFunction(originalScale * 0.6f, outlineExtendScale, timeElapsed / outlineExtendDuration);
                 speed = Mathf.Clamp((current * 0.16f - outlineSpriteRenderer.size.x) / Time.deltaTime, 1.6f, 3);
                 outlineSpriteRenderer.size = new Vector2(current * 0.16f, current * 0.16f);
@@ -104,6 +105,7 @@ public class DrumVisuals : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        outlineSpriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g,spriteRenderer.color.b, 0);
         outlineSpriteRenderer.size = new Vector2(originalScale * 0.6f * 0.16f, originalScale * 0.8f * 0.16f);
     }
 
@@ -112,7 +114,7 @@ public class DrumVisuals : MonoBehaviour
     }
 
     public void OnHit() {
-        outlineExtendSlowing = false;
+        outlineExtendSlowing[outlineCounter] = false;
     }
 
     public void OnPass() {

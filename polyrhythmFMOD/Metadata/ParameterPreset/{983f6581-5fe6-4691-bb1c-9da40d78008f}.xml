@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{983f6581-5fe6-4691-bb1c-9da40d78008f}">
+		<property name="name">
+			<value>Fill Percent Held</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eeb5ea6a-be13-47ca-b194-f8a7a834e33b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6af8943a-a7cd-43b6-bf2d-84edd9f8d919}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6af8943a-a7cd-43b6-bf2d-84edd9f8d919}">
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{059c3bca-4b1f-46fc-8480-a2a54edae153}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{059c3bca-4b1f-46fc-8480-a2a54edae153}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{1f699dd9-81b3-4361-831c-74485b430d19}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{1f699dd9-81b3-4361-831c-74485b430d19}">
+		<relationship name="parameter">
+			<destination>{15b6c08c-7b0d-486d-984f-962f40ece802}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{83be4c43-bbdd-4835-bd1c-25ae534f0607}</destination>
+			<destination>{b6683fed-b35f-42dd-8ba6-7ebd72bca281}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{83be4c43-bbdd-4835-bd1c-25ae534f0607}">
+		<property name="position">
+			<value>0.00066207627118644065</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{b6683fed-b35f-42dd-8ba6-7ebd72bca281}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

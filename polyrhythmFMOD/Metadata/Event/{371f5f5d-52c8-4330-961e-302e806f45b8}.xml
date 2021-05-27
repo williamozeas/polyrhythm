@@ -33,6 +33,7 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{77fb5401-a05c-4c3b-9930-be0554c686e9}</destination>
+			<destination>{7d08f49f-bb92-4024-ac05-c4365e6807e5}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{66486460-862e-4d8f-a9ab-7fdb5a41865f}</destination>
@@ -77,6 +78,11 @@
 	<object class="ActionSheet" id="{77fb5401-a05c-4c3b-9930-be0554c686e9}">
 		<relationship name="modules">
 			<destination>{a568bee2-e974-4294-88e6-d1b4c976de6f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{7d08f49f-bb92-4024-ac05-c4365e6807e5}">
+		<relationship name="preset">
+			<destination>{15b6c08c-7b0d-486d-984f-962f40ece802}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0bee65c3-e0df-4b3c-95df-b127d1f18d19}">
@@ -142,9 +148,6 @@
 	<object class="MixerBusPanner" id="{dc9de21b-635e-4833-b8c0-b5524952e70a}" />
 	<object class="MixerBusFader" id="{07a4b73c-d03c-41f5-a777-231b91cc6551}" />
 	<object class="EventSound" id="{ff26f62e-3d91-4033-8b26-1b150bbee15d}">
-		<relationship name="parameters">
-			<destination>{dc25faf2-513b-4c76-a7c7-6898d524778f}</destination>
-		</relationship>
 		<relationship name="event">
 			<destination>{771102d2-d4a7-4c37-bfe5-bbe93c220e15}</destination>
 		</relationship>
@@ -155,9 +158,4 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{345dae2b-d757-42da-90b3-269f81e67df6}" />
-	<object class="ParameterProperty" id="{dc25faf2-513b-4c76-a7c7-6898d524778f}">
-		<relationship name="parameter">
-			<destination>{b8890a76-2c22-406f-b309-d1d5248b047c}</destination>
-		</relationship>
-	</object>
 </objects>
