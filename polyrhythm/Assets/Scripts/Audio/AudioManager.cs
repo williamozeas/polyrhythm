@@ -27,8 +27,13 @@ public class AudioManager : MonoBehaviour
         BeginMusic();
     }
 
-    void BeginMusic() {
+    public void BeginMusic() {
         callbackHandler.Begin(music);
+    }
+
+    public void StopMusic() {
+        music.release();
+        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     // Update is called once per frame

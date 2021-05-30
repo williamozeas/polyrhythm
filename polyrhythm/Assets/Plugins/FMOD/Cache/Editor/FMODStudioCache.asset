@@ -99,8 +99,7 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
-  Parameters:
-  - {fileID: -272498965515983548}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 9600
@@ -327,7 +326,7 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637576439080000000
+  lastModified: 637576477040000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -399,7 +398,7 @@ MonoBehaviour:
   - {fileID: 8023511508196780382}
   StringsBanks:
   - {fileID: -574168540741548783}
-  stringsBankWriteTime: 637576439080000000
+  stringsBankWriteTime: 637576477040000000
   cacheVersion: 6
 --- !u!114 &647410111141200642
 MonoBehaviour:
@@ -597,7 +596,7 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637576439080000000
+  lastModified: 637576477040000000
   LoadResult: 0
   FileSizes: []
   Exists: 1

@@ -148,6 +148,7 @@
 		<property name="length">
 			<value>6</value>
 		</property>
+		<property name="name" />
 		<property name="polyphony">
 			<value>4</value>
 		</property>
@@ -191,6 +192,7 @@
 		<property name="length">
 			<value>6</value>
 		</property>
+		<property name="name" />
 		<relationship name="event">
 			<destination>{4b3a0179-6649-4388-8fd7-c80ceed9c7aa}</destination>
 		</relationship>
@@ -245,7 +247,7 @@
 			<value>0</value>
 		</property>
 		<property name="name">
-			<value>SETTINGS, 0.006, 0, 0.7, 0.01, 0.06</value>
+			<value>COROUTINE START 0</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{2aad5f88-f4c2-4e8c-8919-c8b726e34636}</destination>
@@ -259,7 +261,7 @@
 			<value>0</value>
 		</property>
 		<property name="name">
-			<value>L, 2</value>
+			<value>L 2</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{2aad5f88-f4c2-4e8c-8919-c8b726e34636}</destination>

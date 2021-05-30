@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class CallbackParser : MonoBehaviour
 {
+    public static IEnumerator specialCoroutine;
+
     //Marker name formatting:
-    //TYPE, PARAMS
+    //TYPE  PARAMS
     //Type: L, Params: Intensity (1-5)
     //Type: R, Params: Intensity (1-5)
     //Type: STYLE, Params: Style Name
     //Type: SETTINGS, Params: PPH (% per hit), Decay, Window time (ms), Miss penalty, Pass penalty
-    //Type: RESET
+    //Type: NEXT
+    //Type: COROUTINE, Params: "START" or "STOP", Coroutine #
+    //Type: SPECIAL, Params: Anything
     //Type: STOP
     public static void Parse(string marker) {
-        string[] symbols = marker.Split(',');
+        string[] symbols = marker.Split(' ');
         Debug.Log(symbols[0]);
         switch (symbols[0]) {
             case "L":
@@ -27,10 +31,17 @@ public class CallbackParser : MonoBehaviour
             case "SETTINGS":
                 setGameSettings(symbols);
                 break;
-            case "RESET":
+            case "NEXT":
                 GameManager.i.ResetFillPercent();
                 break;
+            case "COROUTINE":
+                SpecialCoroutine(symbols);
+                break;
+            case "SPECIAL":
+                SpecialAudioFunctions.Special(symbols);
+                break;
             case "STOP":
+                AudioManager.i.StopMusic();
                 break;
             default:
                 Debug.LogError("Incorrect marker!");
@@ -55,5 +66,20 @@ public class CallbackParser : MonoBehaviour
             newSettings = new GameSettings(float.Parse(args[1]), float.Parse(args[2]), float.Parse(args[3]), float.Parse(args[4]), float.Parse(args[5]));
         }
         GameManager.i.settings = newSettings;
+    }
+
+    private static void SpecialCoroutine(string[] args) {
+        switch (args[1]) {
+            case "START":
+                specialCoroutine = SpecialAudioFunctions.i.Coroutines[int.Parse(args[2])]();
+                SpecialAudioFunctions.i.StartCoroutine(specialCoroutine);
+                break;
+            case "STOP":
+                SpecialAudioFunctions.i.StopCoroutine(specialCoroutine);
+                break;
+            default:
+                Debug.LogError("Incorrect Coroutine Marker!");
+                break;
+        }
     }
 }

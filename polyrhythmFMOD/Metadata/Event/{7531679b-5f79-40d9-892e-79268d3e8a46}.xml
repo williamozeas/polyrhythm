@@ -126,7 +126,7 @@
 			<value>0</value>
 		</property>
 		<property name="name">
-			<value>R, 2</value>
+			<value>R 2</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{3d989329-7563-4f2a-af23-603b48342b85}</destination>
