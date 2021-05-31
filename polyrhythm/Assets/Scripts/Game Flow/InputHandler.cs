@@ -22,5 +22,13 @@ public class InputHandler : MonoBehaviour
         if(Input.GetKeyDown(rightDrumKey)) {
             RightDrumPress?.Invoke();
         }
+        if(Input.GetKeyDown(KeyCode.D)) {
+            GameManager.i.debug = !GameManager.i.debug;
+            if(GameManager.i.debug) {
+                Debug.Log("Debug mode Activated!");
+            } else {
+                Debug.Log("Debug mode deactivated!");
+            }
+        }
     }
 }

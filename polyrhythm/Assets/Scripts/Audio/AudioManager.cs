@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager i;
 
-    private FMOD.Studio.EventInstance music;
+    public FMOD.Studio.EventInstance music;
     private FMODCallbackHandler callbackHandler;
 
     void Awake()

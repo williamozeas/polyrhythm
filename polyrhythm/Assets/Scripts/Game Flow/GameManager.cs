@@ -6,7 +6,9 @@ public enum GameState { MAIN_MENU, GAME, PAUSE}
 
 public class GameManager : MonoBehaviour
 {
+    public bool debug = false;
     public int score = 0;
+    [SerializeField]
     private float fillPercent = 0;
     private GameState state;
     public static GameManager i; 

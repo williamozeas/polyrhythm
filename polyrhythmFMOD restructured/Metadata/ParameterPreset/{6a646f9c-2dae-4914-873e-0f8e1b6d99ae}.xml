@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{6a646f9c-2dae-4914-873e-0f8e1b6d99ae}">
+		<property name="name">
+			<value>Beat Number</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eeb5ea6a-be13-47ca-b194-f8a7a834e33b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1194173a-0cf4-4444-93ee-29354e9a6b55}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1194173a-0cf4-4444-93ee-29354e9a6b55}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

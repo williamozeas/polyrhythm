@@ -17,14 +17,16 @@ public class CallbackParser : MonoBehaviour
     //Type: SPECIAL, Params: Anything
     //Type: STOP
     public static void Parse(string marker) {
+        Debug.Log(marker);
         string[] symbols = marker.Split(' ');
-        Debug.Log(symbols[0]);
         switch (symbols[0]) {
             case "L":
                 L(int.Parse(symbols[1]));
                 break;
             case "R":
                 R(int.Parse(symbols[1]));
+                break;
+            case "NONE":
                 break;
             case "STYLE":
                 break;
@@ -38,7 +40,7 @@ public class CallbackParser : MonoBehaviour
                 SpecialCoroutine(symbols);
                 break;
             case "SPECIAL":
-                SpecialAudioFunctions.Special(symbols);
+                SpecialAudioFunctions.i.Special(symbols);
                 break;
             case "STOP":
                 AudioManager.i.StopMusic();
@@ -60,10 +62,17 @@ public class CallbackParser : MonoBehaviour
     private static void setGameSettings(string[] args) {
         GameSettings newSettings;
         if(args.Length != 6) {
-            newSettings = new GameSettings();
+            setGameSettings(new GameSettings());
             Debug.Log("Default Settings");
         } else {
-            newSettings = new GameSettings(float.Parse(args[1]), float.Parse(args[2]), float.Parse(args[3]), float.Parse(args[4]), float.Parse(args[5]));
+            setGameSettings(new GameSettings(float.Parse(args[1]), float.Parse(args[2]), float.Parse(args[3]), float.Parse(args[4]), float.Parse(args[5])));
+        }
+        
+    }
+
+    public static void setGameSettings(GameSettings newSettings) {
+        if(GameManager.i.debug) {
+            newSettings = new GameSettings(newSettings.pph * 2, 0, newSettings.window, 0, 0);
         }
         GameManager.i.settings = newSettings;
     }
