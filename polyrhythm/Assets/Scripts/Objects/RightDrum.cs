@@ -8,6 +8,7 @@ public class RightDrum : Drum
 
     void OnEnable() {
         InputHandler.RightDrumPress += OnPress;
+        GameManager.OnRightDrumActivate += Activate;
     }
 
     void OnDisable() {

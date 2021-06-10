@@ -7,7 +7,11 @@ public class DrumVisuals : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject outlines;
     private SpriteRenderer[] outlineSpriteRenderers;
-    public Color color;
+    private Color color;
+    public Color Color {
+        get {return color;}
+        set {SetNewColor(value);}
+    }
     private int originalScale = 1;
     [Header("Inflate")]
     public float inflateScale = 0.6f;
@@ -39,13 +43,16 @@ public class DrumVisuals : MonoBehaviour
             outlineExtendFunction = EasingFunction.GetEasingFunction(outlineExtendEase);
         }
     }
+
+    void Awake() {
+        outlineSpriteRenderers = outlines.GetComponentsInChildren<SpriteRenderer>();
+    }
     
 
     void Start()
     {
         inflateEaseFunction = EasingFunction.GetEasingFunction(inflateEase);
         outlineExtendFunction = EasingFunction.GetEasingFunction(outlineExtendEase);
-        outlineSpriteRenderers = outlines.GetComponentsInChildren<SpriteRenderer>();
         spriteRenderer.color = color;
         foreach (var outlineSpriteRenderer in outlineSpriteRenderers)
         {
@@ -81,7 +88,7 @@ public class DrumVisuals : MonoBehaviour
 
 
     private int outlineCounter = 0;
-    public void OnActivate() {
+    public void OnActivate(int intensity) {
         outlineCounter = (outlineCounter + 1) % outlineSpriteRenderers.Length;
         outlineExtendSlowing[outlineCounter] = true;
         StartCoroutine("OutlineExtend");
@@ -119,6 +126,15 @@ public class DrumVisuals : MonoBehaviour
 
     public void OnPass() {
 
+    }
+
+    private void SetNewColor(Color newColor) {
+        color = newColor;
+        spriteRenderer.color = color;
+        foreach (SpriteRenderer spr in outlineSpriteRenderers)
+        {
+            spr.color = color;   
+        }
     }
 
     

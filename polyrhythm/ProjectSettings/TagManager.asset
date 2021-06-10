@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Visuals 0
+  - Visuals 1
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Drums
     uniqueID: 698227475
+    locked: 0
+  - name: UI
+    uniqueID: 1515893547
     locked: 0

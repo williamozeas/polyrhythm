@@ -30,7 +30,9 @@ public class Fill : MonoBehaviour
     }
 
     private void SetFill() {
-        spriteRenderer[index].size = new Vector2(width, GameManager.i.FillPercent * screenHeight);
+        float height = GameManager.i.FillPercent * screenHeight;
+        if (float.IsNaN (height)) height = 0;
+        spriteRenderer[index].size = new Vector2(width, height);
     }
 
     

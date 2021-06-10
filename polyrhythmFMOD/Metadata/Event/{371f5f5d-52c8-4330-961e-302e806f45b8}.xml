@@ -5,7 +5,7 @@
 			<value>MainMusic</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>5</value>
 		</property>
 		<relationship name="folder">
 			<destination>{564d057d-14ec-4663-9402-2dfde98a5f36}</destination>
@@ -135,8 +135,8 @@
 			<value>2</value>
 		</property>
 		<relationship name="sounds">
-			<destination>{ff26f62e-3d91-4033-8b26-1b150bbee15d}</destination>
-			<destination>{82035a51-504c-4f71-9ac5-538289206271}</destination>
+			<destination>{93a0dbe6-8d8d-48f5-9f3e-b0f5e0f8f275}</destination>
+			<destination>{a91f3963-a3a4-4e45-9d57-b2bb740e8475}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d4ab8650-5bea-4e80-8a3f-9f6f53f9c437}" />
@@ -147,15 +147,23 @@
 	</object>
 	<object class="MixerBusPanner" id="{dc9de21b-635e-4833-b8c0-b5524952e70a}" />
 	<object class="MixerBusFader" id="{07a4b73c-d03c-41f5-a777-231b91cc6551}" />
-	<object class="EventSound" id="{ff26f62e-3d91-4033-8b26-1b150bbee15d}">
+	<object class="EventSound" id="{93a0dbe6-8d8d-48f5-9f3e-b0f5e0f8f275}">
 		<relationship name="event">
 			<destination>{771102d2-d4a7-4c37-bfe5-bbe93c220e15}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{82035a51-504c-4f71-9ac5-538289206271}">
+	<object class="EventSound" id="{a91f3963-a3a4-4e45-9d57-b2bb740e8475}">
+		<relationship name="parameters">
+			<destination>{c25a30af-a43d-4e94-99a1-546eac2b1fdd}</destination>
+		</relationship>
 		<relationship name="event">
-			<destination>{97ffd118-bc1d-49fc-a164-baa24f9889ac}</destination>
+			<destination>{1a71ff99-3f81-47eb-85e1-f690200be7b3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{345dae2b-d757-42da-90b3-269f81e67df6}" />
+	<object class="ParameterProperty" id="{c25a30af-a43d-4e94-99a1-546eac2b1fdd}">
+		<relationship name="parameter">
+			<destination>{881370f5-fefe-4052-a720-7f68fe2d7b06}</destination>
+		</relationship>
+	</object>
 </objects>

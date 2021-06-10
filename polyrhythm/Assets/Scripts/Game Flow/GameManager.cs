@@ -8,12 +8,17 @@ public class GameManager : MonoBehaviour
 {
     public bool debug = false;
     public int score = 0;
+    public int song = 0;
     [SerializeField]
     private float fillPercent = 0;
     private GameState state;
     public static GameManager i; 
     public GameSettings settings;
+    public static event ActionRef<int> OnLeftDrumActivate;
+    public static event ActionRef<int> OnRightDrumActivate;
     public static event Action ResetFill;
+    public static event Action StartGame;
+    public static event Action StartMainMenu;
 
     public LeftDrum leftDrum;
     public RightDrum rightDrum;
@@ -40,6 +45,8 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case GameState.GAME:
+                    song = 1;
+                    StartGame?.Invoke();
                     score = 0;
                     break;
 
@@ -91,6 +98,14 @@ public class GameManager : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public static void LeftDrumActivate(int intensity) {
+        OnLeftDrumActivate?.Invoke(ref intensity);
+    }
+
+    public static void RightDrumActivate(int intensity) {
+        OnRightDrumActivate?.Invoke(ref intensity);
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class AudioManager : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class AudioManager : MonoBehaviour
     {
         music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Intro");
         callbackHandler = GetComponent<FMODCallbackHandler>();
-        BeginMusic();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Startup");
+        GameManager.StartGame += BeginMusic;
     }
 
     public void BeginMusic() {

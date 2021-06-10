@@ -16,7 +16,11 @@ public class InputHandler : MonoBehaviour
     }
 
     private void Update() {
+
         if(Input.GetKeyDown(leftDrumKey)) {
+            if(GameManager.i.State == GameState.MAIN_MENU) {
+                GameManager.i.State = GameState.GAME;
+            }
             LeftDrumPress?.Invoke();
         }
         if(Input.GetKeyDown(rightDrumKey)) {
@@ -29,6 +33,10 @@ public class InputHandler : MonoBehaviour
             } else {
                 Debug.Log("Debug mode deactivated!");
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.S)) {
+            StyleManager.i.ChangeStyle(new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"), StyleTransition.None);
         }
     }
 }

@@ -52,15 +52,14 @@ public class CallbackParser : MonoBehaviour
     }
 
     private static void L(int intensity) {
-        GameManager.i.leftDrum.Activate();
+        GameManager.LeftDrumActivate(intensity);
     }
 
     private static void R(int intensity) {
-        GameManager.i.rightDrum.Activate();
+        GameManager.RightDrumActivate(intensity);
     }
     
     private static void setGameSettings(string[] args) {
-        GameSettings newSettings;
         if(args.Length != 6) {
             setGameSettings(new GameSettings());
             Debug.Log("Default Settings");

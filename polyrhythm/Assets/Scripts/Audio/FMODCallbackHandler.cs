@@ -46,11 +46,14 @@ public class FMODCallbackHandler : MonoBehaviour
         musicInstance.setUserData(IntPtr.Zero);
         musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         musicInstance.release();
-        timelineHandle.Free();
+        if(timelineHandle.IsAllocated) {
+            timelineHandle.Free();
+        }
     }
 
     void OnGUI()
     {
+        if(timelineInfo != null)
         GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentMusicBar, (string)timelineInfo.lastMarker));
     }
 
