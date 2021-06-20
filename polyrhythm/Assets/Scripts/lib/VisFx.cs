@@ -13,5 +13,6 @@ public class VisFx
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        spr.color = new Color(color.r, color.g, color.b, 0);
     }
 }

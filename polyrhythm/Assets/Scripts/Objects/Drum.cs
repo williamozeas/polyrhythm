@@ -8,6 +8,7 @@ public class Drum : MonoBehaviour
     public DrumType drumType = DrumType.Left;
     public DrumVisuals visuals;
     private bool active = false;
+    private int intensity;
     [SerializeField]
     protected bool addsToScore;
     private int activeNotes = 0;
@@ -21,15 +22,16 @@ public class Drum : MonoBehaviour
         visuals = GetComponent<DrumVisuals>();
     }
 
-    public void Activate(ref int intensity) {
+    public void Activate(ref int intensityIn) {
         StartCoroutine("HoldWindowOpen");
-        visuals.OnActivate(intensity);
+        visuals.OnActivate(intensityIn);
+        intensity = intensityIn;
     }
 
     public virtual void OnPress() {
         visuals.OnPress();
         if(active) {
-            OnHit();
+            OnHit(intensity);
         } else {
             //StartCoroutine("HoldHit");
             OnMiss();
@@ -44,13 +46,13 @@ public class Drum : MonoBehaviour
         visuals.OnMiss();
     }
 
-    public virtual void OnHit() {
+    public virtual void OnHit(int intensity) {
         if (addsToScore) {
             GameManager.i.addFill();
             hits++;
             Debug.Log("Hit");
         }
-        visuals.OnHit();
+        visuals.OnHit(intensity);
         active = false;
     }
 
@@ -79,7 +81,7 @@ public class Drum : MonoBehaviour
         float timeElapsed = 0;
         while(timeElapsed < GameManager.i.settings.earlyDelay) {
             if(active) {
-                OnHit();
+                OnHit(intensity);
                 yield break;
             }
             timeElapsed += Time.deltaTime;

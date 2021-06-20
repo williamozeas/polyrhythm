@@ -120,8 +120,9 @@ public class DrumVisuals : MonoBehaviour
 
     }
 
-    public void OnHit() {
+    public void OnHit(int intensity) {
         outlineExtendSlowing[outlineCounter] = false;
+        CameraShake.i.Shake(intensity);
     }
 
     public void OnPass() {

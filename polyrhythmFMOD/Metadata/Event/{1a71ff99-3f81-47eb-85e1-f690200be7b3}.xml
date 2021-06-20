@@ -78,6 +78,7 @@
 	<object class="GroupTrack" id="{ea886cd5-c22c-4c62-8eb5-053d1dc0de52}">
 		<relationship name="automationTracks">
 			<destination>{a7d234a7-bca6-4fc9-809a-aca42aca27fb}</destination>
+			<destination>{fd4d0d1f-8faa-40bf-b201-8f863dc72d42}</destination>
 		</relationship>
 		<relationship name="modules">
 			<destination>{7f2e4813-18da-4f50-b963-376fefb28d31}</destination>
@@ -165,6 +166,11 @@
 	<object class="AutomationTrack" id="{a7d234a7-bca6-4fc9-809a-aca42aca27fb}">
 		<relationship name="automator">
 			<destination>{17ebff2d-0e2d-4010-90e8-50856c22b6c3}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{fd4d0d1f-8faa-40bf-b201-8f863dc72d42}">
+		<relationship name="automator">
+			<destination>{a8d6bc85-1102-441a-a849-b3657d2449fa}</destination>
 		</relationship>
 	</object>
 	<object class="SoundScatterer" id="{7f2e4813-18da-4f50-b963-376fefb28d31}">

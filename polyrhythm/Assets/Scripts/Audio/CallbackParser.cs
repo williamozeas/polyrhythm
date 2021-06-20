@@ -8,8 +8,8 @@ public class CallbackParser : MonoBehaviour
 
     //Marker name formatting:
     //TYPE  PARAMS
-    //Type: L, Params: Intensity (1-5)
-    //Type: R, Params: Intensity (1-5)
+    //Type: L, Params: Intensity (0-5)
+    //Type: R, Params: Intensity (0-5)
     //Type: STYLE, Params: Style Name
     //Type: SETTINGS, Params: PPH (% per hit), Decay, Window time (ms), Miss penalty, Pass penalty
     //Type: NEXT
@@ -29,6 +29,7 @@ public class CallbackParser : MonoBehaviour
             case "NONE":
                 break;
             case "STYLE":
+                Style(symbols);
                 break;
             case "SETTINGS":
                 setGameSettings(symbols);
@@ -89,5 +90,94 @@ public class CallbackParser : MonoBehaviour
                 Debug.LogError("Incorrect Coroutine Marker!");
                 break;
         }
+    }
+
+    private static void Style(string[] symbols) {
+        StyleTransition transition;
+        StyleDirection direction;
+        //direction
+        switch(symbols[3].ToLower()) {
+            case "add": {
+                direction = StyleDirection.Add;
+                break;
+            }
+            case "remove": {
+                direction = StyleDirection.Remove;
+                break;
+            }
+            default: {
+                direction = StyleDirection.None;
+                break;
+            }
+        }
+        //transition
+        switch(symbols[2].ToLower()) {
+            case "straightwipemaskr": {
+                transition = StyleTransition.StraightWipeR;
+                break;
+            }
+            case "straightwipemaskl": {
+                transition = StyleTransition.StraightWipeL;
+                break;
+            }
+            case "circlegrowtopr": {
+                transition = StyleTransition.CircleGrowTopR;
+                break;
+            }
+            case "circlegrowtopl": {
+                transition = StyleTransition.CircleGrowTopL;
+                break;
+            }
+            case "circlegrowbotr": {
+                transition = StyleTransition.CircleGrowBotR;
+                break;
+            }
+            case "circlegrowbotl": {
+                transition = StyleTransition.CircleGrowBotL;
+                break;
+            }
+            case "circlegrowcenter": {
+                transition = StyleTransition.CircleGrowCenter;
+                break;
+            }
+            case "drippywiper": {
+                transition = StyleTransition.DrippyWipeR;
+                break;
+            }
+            case "drippywipel": {
+                transition = StyleTransition.DrippyWipeL;
+                break;
+            }
+            case "wavywiper": {
+                transition = StyleTransition.WavyWipeR;
+                break;
+            }
+            case "wavywipel": {
+                transition = StyleTransition.WavyWipeL;
+                break;
+            }
+            case "horizontaldoors": {
+                transition = StyleTransition.HorizontalDoors;
+                break;
+            }
+            case "verticaldoors": {
+                transition = StyleTransition.VerticalDoors;
+                break;
+            }
+            case "fade": {
+                transition = StyleTransition.Fade;
+                break;
+            }
+            case "none": {
+                transition = StyleTransition.None;
+                break;
+            }
+            default: {
+                transition = StyleTransition.None;
+                Debug.Log("Unknown transition type!");
+                break;
+            }
+        }
+        StyleManager.i.ChangeStyle(StyleManager.Styles[int.Parse(symbols[1])], transition, direction, symbols);
     }
 }

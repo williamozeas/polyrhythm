@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +32,10 @@ public class SetColor : MonoBehaviour
     //should be overridden for non-sprite renderer classes
     protected virtual void UpdateColorOfComponent() {
         spriteRenderer.color = StyleManager.i.GetColor(sideNumber, styleColor);
+    }
+
+    protected virtual void SetColorTone() {
+        
     }
 
    

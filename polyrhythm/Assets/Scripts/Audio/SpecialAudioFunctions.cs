@@ -45,13 +45,13 @@ public class SpecialAudioFunctions : MonoBehaviour
     };
 
     private GameSettings[] IntroSettings = {
-        new GameSettings(0.01f, 0, 0.8f, 0.01f, 0.008f), //0
-        new GameSettings(0.01f, 0, 0.7f, 0.01f, 0.008f), //0.1
-        new GameSettings(0.01f, 0, 0.6f, 0.01f, 0.008f), //0.2
-        new GameSettings(0.009f, 0, 0.6f, 0.01f, 0.008f), //0.3
-        new GameSettings(0.008f, 0, 0.5f, 0.01f, 0.008f), //0.4
-        new GameSettings(0.007f, 0, 0.5f, 0.015f, 0.008f), //0.5
-        new GameSettings(0.006f, 0, 0.45f, 0.015f, 0.008f), //0.6
+        new GameSettings(0.012f, 0, 0.8f, 0.01f, 0.008f), //0
+        new GameSettings(0.012f, 0, 0.7f, 0.01f, 0.008f), //0.1
+        new GameSettings(0.012f, 0, 0.6f, 0.01f, 0.008f), //0.2
+        new GameSettings(0.01f, 0, 0.6f, 0.01f, 0.008f), //0.3
+        new GameSettings(0.01f, 0, 0.5f, 0.01f, 0.008f), //0.4
+        new GameSettings(0.008f, 0, 0.5f, 0.015f, 0.008f), //0.5
+        new GameSettings(0.0065f, 0, 0.45f, 0.015f, 0.008f), //0.6
         new GameSettings(0.0055f, 0, 0.4f, 0.015f, 0.008f), //0.7
         new GameSettings(0.005f, 0, 0.3f, 0.015f, 0.008f), //0.8
         new GameSettings(0.0045f, 0, 0.3f, 0.013f, 0.008f), //0.9
@@ -85,7 +85,6 @@ public class SpecialAudioFunctions : MonoBehaviour
     private bool introMeasureReset = false;
     private void IntroMeasure() {
         float fill = GameManager.i.FillPercent;
-        Debug.Log("INTROMEASURE!!!");
         if (fill >= 1 && !introMeasureReset) {
             introMeasurePart++;
             AudioManager.i.music.setParameterByName("Part", introMeasurePart);

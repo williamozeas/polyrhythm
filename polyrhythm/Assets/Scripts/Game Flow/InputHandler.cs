@@ -36,7 +36,7 @@ public class InputHandler : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.S)) {
-            StyleManager.i.ChangeStyle(new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"), StyleTransition.None);
+            StyleManager.i.ChangeStyle(StyleManager.Styles[1], StyleTransition.CircleGrowBotR, StyleDirection.Add, null);
         }
     }
 }

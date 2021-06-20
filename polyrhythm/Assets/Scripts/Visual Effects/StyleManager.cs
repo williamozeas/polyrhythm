@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StyleTransition {None, Fade, StraightWipeL, StraightWipeR, CircleOutL, CircleOutR, CircleInL, CircleInR}
+public enum StyleTransition {None, Fade, StraightWipeL, StraightWipeR, CircleGrowTopL, CircleGrowTopR, 
+        CircleGrowBotL, CircleGrowBotR, CircleGrowCenter, DrippyWipeR, DrippyWipeL, WavyWipeR, WavyWipeL,
+        HorizontalDoors, VerticalDoors}
+public enum StyleDirection {Add, Remove, None}
 
 public class StyleManager : MonoBehaviour
 {
@@ -17,36 +20,34 @@ public class StyleManager : MonoBehaviour
         if(i == null) {
             i = this;
         }
+        SetStylesArray();
         style[0] = new Style();
-        style[1] = new Style("#fcff61", "#7e70ff", "#404040", "#e8e8e8");
+        style[1] = Styles[1];
     }
 
     // Start is called before the first frame update
     void Start()
     {
         activeSide = 0;
-
     }
 
-    public void ChangeStyle(Style newStyle, StyleTransition transition) {
+    public void ChangeStyle(Style newStyle, StyleTransition transition, StyleDirection direction, string[] args) {
         if(transition == StyleTransition.None || transition == StyleTransition.Fade) {
             style[activeSide] = newStyle;
             OnStyleChange?.Invoke(ref transition); //in these cases the SetColor fn will take care of the transition
         } else {
             style[(activeSide + 1) % 2] = newStyle;
-            ChangeStyle(transition);
+            ChangeStyle(transition, direction, args);
         }
             
     }
 
-    public void ChangeStyle(StyleTransition transition) {
+    public void ChangeStyle(StyleTransition transition, StyleDirection direction, string[] args) {
         //REQ: transition != None or Fade
         OnStyleChange?.Invoke(ref transition); //have all sprite sets change their colors THEN play transition anim
-        //Play anims
-        switch(transition) {
-            case StyleTransition.StraightWipeL:
-                break;
-        }
+        //Play anims 
+        MaskManager.i.Transition(transition, direction, args);
+        
     }
 
     public Color GetColor(int sideNumber, StyleColor styleColor) {
@@ -67,7 +68,29 @@ public class StyleManager : MonoBehaviour
         }
     }
 
-    
+    public void SwitchStyles() {
+        Style temp = style[activeSide];
+        style[activeSide] = style[(activeSide + 1) % 2];
+        style[(activeSide + 1) % 2] = temp;
+        StyleTransition trans = StyleTransition.None;
+        OnStyleChange?.Invoke(ref trans);
+    }
+
+    private static Style[] styles;
+    private void SetStylesArray() {
+        styles = new Style[] {
+            //0 - default black/white/blue/redpink
+            new Style(),
+            //1 - red/green with white/black reversed
+            new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"),
+            //2 - yellow/purple with gray bgs
+            new Style("#fcff61", "#7e70ff", "#202020", "#e8e8e8")
+        };
+    }
+
+    public static Style[] Styles {
+        get {return styles;} private set{}
+    }
 
     
 }
