@@ -14,7 +14,7 @@ public class InputHandler : MonoBehaviour
     private void Start() {
         instance = this;
     }
-
+    int current = 0;
     private void Update() {
 
         if(Input.GetKeyDown(leftDrumKey)) {
@@ -36,7 +36,8 @@ public class InputHandler : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.S)) {
-            StyleManager.i.ChangeStyle(StyleManager.Styles[1], StyleTransition.CircleGrowBotR, StyleDirection.Add, null);
+            current = (current + 1)%2;
+            StyleManager.i.ChangeStyle(StyleManager.Styles[current], StyleTransition.CircleGrowBotR, StyleDirection.Add, null);
         }
     }
 }

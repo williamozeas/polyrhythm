@@ -7,6 +7,8 @@ public class DrumVisuals : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject outlines;
     private SpriteRenderer[] outlineSpriteRenderers;
+    [SerializeField]
+    private ParticleSystem particles;
     private Color color;
     public Color Color {
         get {return color;}
@@ -61,9 +63,11 @@ public class DrumVisuals : MonoBehaviour
         
     }
 
-    // void Update() {
-    //     easingFunction = EasingFunction.GetEasingFunction(ease);
-    // }
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.L)) {
+            OnHit(5);
+        }
+    }
 
     private IEnumerator inflateCoroutine;
 
@@ -123,10 +127,17 @@ public class DrumVisuals : MonoBehaviour
     public void OnHit(int intensity) {
         outlineExtendSlowing[outlineCounter] = false;
         CameraShake.i.Shake(intensity);
+        PostProcessing.i.OnHit(intensity);
+        EmitParticles(intensity);
     }
 
     public void OnPass() {
 
+    }
+
+    private void EmitParticles(int intensity) {
+        ParticleSystem.MainModule main = particles.main;
+        particles.Emit(intensity * 8 + 8);
     }
 
     private void SetNewColor(Color newColor) {

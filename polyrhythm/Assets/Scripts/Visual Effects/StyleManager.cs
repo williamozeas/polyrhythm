@@ -81,10 +81,12 @@ public class StyleManager : MonoBehaviour
         styles = new Style[] {
             //0 - default black/white/blue/redpink
             new Style(),
-            //1 - red/green with white/black reversed
-            new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"),
+            //1 - pink/green
+            new Style ("#38ff49", "#ff38e8", "#000000", "#eeeeee"),
             //2 - yellow/purple with gray bgs
-            new Style("#fcff61", "#7e70ff", "#202020", "#e8e8e8")
+            new Style("#fcff61", "#7e70ff", "#202020", "#e8e8e8"),
+            //3 - red/green with white/black reversed
+            new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"),
         };
     }
 
