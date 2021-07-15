@@ -77,6 +77,7 @@ public class StyleManager : MonoBehaviour
     }
 
     private static Style[] styles;
+    //Left, Right, Bg, Fill, Extra
     private void SetStylesArray() {
         styles = new Style[] {
             //0 - default black/white/blue/redpink
@@ -87,6 +88,8 @@ public class StyleManager : MonoBehaviour
             new Style("#fcff61", "#7e70ff", "#202020", "#e8e8e8"),
             //3 - red/green with white/black reversed
             new Style ("#38ff49", "#ff38e8", "#eeeeee", "#000000"),
+            //4 - black and white and grey
+            new Style ("#f0f0fd", "#fdf0f0", "#050505", "#707070"),
         };
     }
 

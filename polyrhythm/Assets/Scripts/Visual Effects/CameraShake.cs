@@ -72,8 +72,12 @@ public class CameraShake : MonoBehaviour
         Shake(intensity);
     }
 
+    float[] shakeConsts = { 0, 0.1f, 0.25f, 0.5f, 0.7f, 1f };
     public void Shake(int intensity) {
-        trauma = intensity/5f;
+        float newTrauma = shakeConsts[intensity];
+        if(newTrauma > trauma) {
+            trauma = newTrauma;
+        }
     }
 
     public void StartShaking(float traumaIn) {

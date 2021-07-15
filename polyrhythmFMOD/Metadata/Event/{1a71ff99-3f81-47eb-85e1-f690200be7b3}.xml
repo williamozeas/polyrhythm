@@ -232,6 +232,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{52947a1a-aa1e-4450-9bbb-47761c2aca57}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -252,6 +255,7 @@
 		<property name="length">
 			<value>6</value>
 		</property>
+		<property name="name" />
 		<relationship name="event">
 			<destination>{4b3a0179-6649-4388-8fd7-c80ceed9c7aa}</destination>
 		</relationship>
@@ -568,7 +572,7 @@
 	<object class="MixerBusFader" id="{2ce08c44-f0c7-4aa5-aa9b-b9a8b7598e19}" />
 	<object class="CompressorEffect" id="{0f988a05-57f7-4d3b-beb3-850e39996ffb}">
 		<property name="threshold">
-			<value>-6.5</value>
+			<value>-9.5</value>
 		</property>
 		<property name="ratio">
 			<value>7.80000019</value>
@@ -590,7 +594,7 @@
 			<value>2</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-4.99999619</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{c8feee40-aaa4-4256-9e34-4bd343945710}">
@@ -598,7 +602,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d93960ac-bc16-44bf-92f5-35ad339d380a}">
@@ -606,7 +610,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-1</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{27677454-52d4-4a25-8b2d-c5ddcbcf2597}">
