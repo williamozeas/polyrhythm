@@ -192,6 +192,7 @@ namespace FMODUnity
 
             FMOD.ADVANCEDSETTINGS advancedSettings = new FMOD.ADVANCEDSETTINGS();
             advancedSettings.randomSeed = (uint)DateTime.UtcNow.Ticks;
+            advancedSettings.resamplerMethod = FMOD.DSP_RESAMPLER.SPLINE;
             #if UNITY_EDITOR || UNITY_STANDALONE
             advancedSettings.maxVorbisCodecs = realChannels;
             #elif UNITY_XBOXONE
