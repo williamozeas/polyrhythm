@@ -120,6 +120,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-8442575303679714661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/First
+  m_EditorClassIdentifier: 
+  Path: event:/Music/First
+  guid: e4e036acb1482a47bb84d22d76c1f4c3
+  Banks:
+  - {fileID: 1560501174069720177}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 346683
 --- !u!114 &-8410416095847603372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +182,26 @@ MonoBehaviour:
   ID:
     data1: 853264301
     data2: 1660406265
+  Exists: 1
+--- !u!114 &-7841566741759301755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Intro/Chord
+  m_EditorClassIdentifier: 
+  Name: Chord
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-7816165100655206098
 MonoBehaviour:
@@ -385,6 +428,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-5507965748707397966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Chord
+  m_EditorClassIdentifier: 
+  Name: Chord
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5166878115391807828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +699,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2438764331592644826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +898,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-986979062136782185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,13 +1084,14 @@ MonoBehaviour:
   - {fileID: 3382889104870544074}
   - {fileID: -127016454222200685}
   - {fileID: 805348366266309294}
+  - {fileID: -8442575303679714661}
   EditorParameters:
   - {fileID: 3202680531305053863}
   MasterBanks:
   - {fileID: 1560501174069720177}
   StringsBanks:
   - {fileID: 2046373826151322219}
-  stringsBankWriteTime: 637588716810000000
+  stringsBankWriteTime: 637619669710000000
   cacheVersion: 6
 --- !u!114 &228372424211712395
 MonoBehaviour:
@@ -1152,6 +1216,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &915038483414007038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Part
+  m_EditorClassIdentifier: 
+  Name: Part
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1190951836022509893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,7 +1295,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1560501174069720177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1311,7 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637588716810000000
+  lastModified: 637619669710000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1306,11 +1390,11 @@ MonoBehaviour:
   Path: ../polyrhythmFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637588716810000000
+  lastModified: 637619669710000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1112
+    Value: 1160
   Exists: 1
 --- !u!114 &2258472424072328416
 MonoBehaviour:
@@ -1472,8 +1556,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1454282058877797450}
-  - {fileID: -1144795936576804906}
+  - {fileID: 4300149314463683972}
+  - {fileID: -7841566741759301755}
   MinDistance: 0
   MaxDistance: 0
   Length: 23600
@@ -1532,6 +1616,26 @@ MonoBehaviour:
   Name: Chord
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4300149314463683972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Intro/Part
+  m_EditorClassIdentifier: 
+  Name: Part
+  Min: 0
+  Max: 2
   Default: 0
   ID:
     data1: 0
@@ -1637,8 +1741,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 9175842779540959080}
-  - {fileID: -2623050843648057203}
+  - {fileID: -5507965748707397966}
+  - {fileID: 915038483414007038}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1981,7 +2085,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &9190086632752654949
 MonoBehaviour:
   m_ObjectHideFlags: 0
