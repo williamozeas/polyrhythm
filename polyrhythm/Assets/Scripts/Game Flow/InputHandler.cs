@@ -26,6 +26,8 @@ public class InputHandler : MonoBehaviour
         if(Input.GetKeyDown(rightDrumKey)) {
             RightDrumPress?.Invoke();
         }
+
+
         if(Input.GetKeyDown(KeyCode.D)) {
             GameManager.i.debug = !GameManager.i.debug;
             if(GameManager.i.debug) {
@@ -33,6 +35,10 @@ public class InputHandler : MonoBehaviour
             } else {
                 Debug.Log("Debug mode deactivated!");
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.F)) {
+            GameManager.i.FillPercent = 1f;
         }
 
         if(Input.GetKeyDown(KeyCode.S)) {

@@ -6,6 +6,7 @@ public class DrumVisuals : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public GameObject outlines;
+    public Fill fill;
     private SpriteRenderer[] outlineSpriteRenderers;
     [SerializeField]
     private ParticleSystem particles;
@@ -117,7 +118,7 @@ public class DrumVisuals : MonoBehaviour
             yield return null;
         }
         outlineSpriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g,spriteRenderer.color.b, 0);
-        outlineSpriteRenderer.size = new Vector2(originalScale * 0.6f * 0.16f, originalScale * 0.8f * 0.16f);
+        outlineSpriteRenderer.size = new Vector2(originalScale * 0.6f * 0.16f, originalScale * 0.6f * 0.16f);
     }
 
     public void OnMiss() {

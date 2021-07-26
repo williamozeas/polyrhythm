@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CallbackParser : MonoBehaviour
 {
     public static IEnumerator specialCoroutine;
+
+    public static int primeLock = -1;
 
     //Marker name formatting:
     //TYPE  PARAMS
@@ -17,9 +20,18 @@ public class CallbackParser : MonoBehaviour
     //Type: SPECIAL, Params: Anything
     //Type: STOP
     public static void Parse(string marker) {
-        Debug.Log(marker);
+        // Debug.Log(marker);
         string[] symbols = marker.Split(' ');
+        Parse(symbols);
+    }
+
+    public static void Parse(string[] symbols) {
         switch (symbols[0]) {
+            case "PRIMED":
+                if(int.Parse(symbols[1]) == primeLock) {
+                    Parse(symbols.Skip(2).ToArray());
+                }
+                break;
             case "L":
                 L(int.Parse(symbols[1]));
                 break;
@@ -27,6 +39,9 @@ public class CallbackParser : MonoBehaviour
                 R(int.Parse(symbols[1]));
                 break;
             case "NONE":
+                break;
+            case "PRIME":
+                primeLock = int.Parse(symbols[1]);
                 break;
             case "STYLE":
                 Style(symbols);
@@ -47,7 +62,8 @@ public class CallbackParser : MonoBehaviour
                 AudioManager.i.StopMusic();
                 break;
             default:
-                Debug.LogError("Incorrect marker!");
+                Debug.LogWarning("Incorrect marker!");
+                Debug.Log(symbols[0]);
                 break;
         }
     }

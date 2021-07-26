@@ -24,7 +24,7 @@ public class Fill : MonoBehaviour
 
     public void ResetFill() {
         SpriteRenderer prev = spriteRenderer[index];
-        index = (index + 1) % 2;
+        FlipFill();
         SetFill();
         StartCoroutine(VisFx.FadeOut(prev, 1f));
     }
@@ -32,7 +32,20 @@ public class Fill : MonoBehaviour
     private void SetFill() {
         float height = GameManager.i.FillPercent * screenHeight;
         if (float.IsNaN (height)) height = 0;
-        spriteRenderer[index].size = new Vector2(width, height);
+        spriteRenderer[0].size = new Vector2(width, height);
+        spriteRenderer[1].size = new Vector2(width, height);
+    }
+
+    private void FlipFill() {
+        index = (index + 1) % 2;
+    }
+
+    public SpriteRenderer GetCurrentFill() {
+        return spriteRenderer[index];
+    }
+
+    private void OnStyleChange(ref StyleTransition trans) {
+        
     }
 
     

@@ -34,9 +34,7 @@ public class SetColor : MonoBehaviour
         spriteRenderer.color = StyleManager.i.GetColor(sideNumber, styleColor);
     }
 
-    protected virtual void SetColorTone() {
-        
-    }
+    
 
    
 }

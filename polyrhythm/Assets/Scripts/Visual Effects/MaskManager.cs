@@ -81,6 +81,14 @@ public class MaskManager : MonoBehaviour
                 }
                 break;
             }
+            case StyleTransition.CircleGrowCenter: {
+                if(dir == StyleDirection.Add) {
+                    circleGrowCenter.Add();
+                } else {
+                    circleGrowCenter.Remove();
+                }
+                break;
+            }
             case StyleTransition.DrippyWipeL: {
                 if(dir == StyleDirection.Add) {
                     drippyWipeL.Add();
