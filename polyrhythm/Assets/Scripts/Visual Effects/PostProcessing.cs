@@ -26,28 +26,33 @@ public class PostProcessing : MonoBehaviour
 
     private Coroutine chromaticChange;
     public void OnHit(int intensity) {
-        if(chromaticChange != null) {
-            StopCoroutine(chromaticChange);
-        }
+        // if(chromaticChange != null) {
+        //     StopCoroutine(chromaticChange);
+        // }
         chromaticChange = StartCoroutine(ChromaticAberrationHit(intensity));
     }
 
     private IEnumerator ChromaticAberrationHit(int intensity) {
         float newValue = 0;
-        if(intensity != 1) {
+        if(intensity > 1) {
             newValue = Mathf.Clamp01(intensity/4f);
         }
         if(newValue == 0) {
             yield return null;
         } else {
             chromatic.intensity.Override(newValue);
-            float holdTime = 0.1f + newValue * 0.2f;
-            float decayTime = 0.2f + newValue * 0.4f;
+            float holdTime =  newValue * 0.2f;
+            float decayTime = newValue * 0.4f;
             float timeElapsed = 0;
             yield return new WaitForSecondsRealtime(holdTime);
+            float prevFrame = newValue;
             while(timeElapsed < decayTime) {
-                chromatic.intensity.Override(EasingFunction.EaseInSine(newValue, 0, timeElapsed/decayTime));
+                float newIntensity = EasingFunction.EaseInSine(newValue, 0, timeElapsed/decayTime);
+                if(prevFrame >= chromatic.intensity.value) {
+                    chromatic.intensity.Override(newIntensity);
+                }
                 timeElapsed += Time.deltaTime;
+                prevFrame = newIntensity;
                 yield return null;
             }
             chromatic.intensity.Override(0f);

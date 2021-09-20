@@ -43,6 +43,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.mathematics": {
+      "version": "file:/Users/williamozeas/Documents/Unity.Mathematics-master/src",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.render-pipelines.core": {
       "version": "8.3.1",
       "depth": 1,

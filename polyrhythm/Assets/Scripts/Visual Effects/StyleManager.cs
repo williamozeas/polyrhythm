@@ -131,6 +131,58 @@ public class StyleManager : MonoBehaviour
             new Style ("#eeeeee", "#FF2839", "#FF2839", "#eeeeee"),
             //15 - Cotton Candy Clouds
             new Style ("#Ea5dE2", "#60F8FF", "#FAFF60", "#949687"),
+            //16 - Caution Sign
+            new Style ("#E3B23C", "#E3B23C", "#423E37", "#AB9D9C", "#A39594"),
+            //17-22 - Faded Glass Transition
+            new Style ("#E3B23C", "#E3B23C", "#423E37", "#8C8C7D", "#A39594"),
+            new Style ("#CFB2B2", "#E3B23C", "#423E37", "#6D6466", "#A39594"),
+            new Style ("#CFB2B2", "#E3B23C", "#4E3D42", "#6D6466", "#A39594"),
+            new Style ("#CFB2B2", "#6D6466", "#4E3D42", "#8C8C7D", "#A39594"),
+            new Style ("#CFB2B2", "#6D6466", "#8C8C7D", "#4E3D42", "#A39594"),
+            new Style ("#8C8C7D", "#6D6466", "#CFB2B2", "#4E3D42", "#A39594"),
+            //23 - Faded Glass
+            new Style("#A9BD89", "#CFB2B2", "#4E3D42", "#8C8C7D", "#6D6466"),
+            //24 - Pan Flag
+            new Style("#f15bb5", "#00bbf9", "#42147B", "#FEE020", "#00F5D4"),
+            //25 - Pan Flag Reversed bg
+            new Style("#f15bb5", "#00bbf9", "#FEE020", "#FEE020", "#00F5D4"),
+            //26 - Pan Flag BW
+            new Style("#f15bb5", "#00bbf9", "#000000", "#dddddd", "#00F5D4"),
+            //27 - green fill
+            new Style("#bbbbbbbb", "#4f92ff", "#0C0C08", "#28CC46", "#63A088"),
+            //28 - all warm yellow
+            new Style("#bbbbbbbb", "#4f92ff", "#F2C253", "#F2C253", "#63A088"),
+            //29 - fall floaty
+            new Style("#388697", "#5E277C", "#DCAE43", "#D99125", "#63A088"),
+            //30 - green-yellow bg
+            new Style("#388697", "#5E277C", "#C4DB42", "#8BD925", "#63A088"),
+            //31 - green bg
+            new Style("#388697", "#5E277C", "#42DB5B", "#25D96A", "#63A088"),
+            //32 - turqoise bg
+            new Style("#388697", "#5E277C", "#42D9DB", "#25D9D9", "#63A088"),
+            //33 - blue bg
+            new Style("#388697", "#5E277C", "#6342DB", "#4C25D9", "#63A088"),
+            //34 - pink bg
+            new Style("#388697", "#5E277C", "#C442DB", "#D92594", "#63A088"),
+            //35 - red bg
+            new Style("#388697", "#5E277C", "#DB5142", "#D92525", "#63A088"),
+            //36 - climax
+            new Style("#B1D2D1", "#D6E2E9", "#EF6C9C", "#FFAE70", "#F0EFEB"),
+            //37 - pretty black grapes
+            new Style ("#DD99BB", "#7B506F", "#000000", "#000000", "EAD7D1"),
+            //38 - pretty grapes
+            new Style ("#DD99BB", "#7B506F", "#0b0916", "#A19291", "EAD7D1"),
+            //38 - pretty grapes all white
+            new Style ("#DD99BB", "#7B506F", "#A19291", "#A19291", "EAD7D1"),
+            //40 - pretty grapes reversed
+            new Style ("#DD99BB", "#7B506F", "#9d8e8d", "#0b0916", "EAD7D1"),
+            
+            
+            
+            //## - cool sweater
+            new Style("#ACC196", "#E9EB9E", "#49475B", "#799496", "#14080E"),
+            
+            //new Style("#", "#", "#", "#", "#"),
         };
     }
 

@@ -146,7 +146,7 @@ public class DrumVisuals : MonoBehaviour
         spriteRenderer.color = color;
         foreach (SpriteRenderer spr in outlineSpriteRenderers)
         {
-            spr.color = color;   
+            spr.color = new Color(color.r, color.g, color.b, spr.color.a);   
         }
     }
 

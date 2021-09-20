@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637619931410000000
-    m_Hash: 2692930424
+      ticks: 637629233150000000
+    m_Hash: 329049304
   m_LockFileStatus:
     m_FilePath: /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637619947330000000
-    m_Hash: 3100809146
+      ticks: 637629233160000000
+    m_Hash: 1983571370
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -425,6 +425,81 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        path: 
+    - packageId: com.unity.mathematics@file:/Users/williamozeas/Documents/Unity.Mathematics-master/src
+      testable: 0
+      isDirectDependency: 1
+      version: 1.2.1
+      source: 4
+      resolvedPath: /Users/williamozeas/Documents/Unity.Mathematics-master/src
+      assetPath: Packages/com.unity.mathematics
+      name: com.unity.mathematics
+      displayName: Mathematics
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: Unity's C# SIMD math library providing vector types and math functions
+        with a shader like syntax.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        compatible:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        verified: 1.2.1
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - unity
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/Unity.Mathematics
+        revision: 
         path: 
     - packageId: com.unity.render-pipelines.universal@8.3.1
       testable: 0
@@ -3223,6 +3298,20 @@ m_PackageAssets:
         revision: ec1fb56f8d8f95b1503ea22a73b83e2cfb02f083
         path: 
   m_LocalPackages:
-    m_LocalFileStatus: []
+    m_LocalFileStatus:
+    - m_FilePath: /Users/williamozeas/Documents/Unity.Mathematics-master/src/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 637515901020000000
+      m_Hash: 1389951364
+    - m_FilePath: /Users/williamozeas/Documents/Unity.Mathematics-master/src
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 0
+      m_Hash: 0
 m_ProjectPath: /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Packages
 m_EditorVersion: 2020.1.17f1 (9957aee8edc2)
