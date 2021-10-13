@@ -259,7 +259,7 @@ namespace FMODUnityResonance
                     }
                 }
             }
-            Debug.LogError(listenerPluginName + " not found in the FMOD project.");
+            RuntimeUtils.DebugLogError(listenerPluginName + " not found in the FMOD project.");
             return dsp;
         }
 
@@ -270,7 +270,7 @@ namespace FMODUnityResonance
         private static readonly string listenerPluginName = "Resonance Audio Listener";
 
         // Size of |RoomProperties| struct in bytes.
-        private static readonly int roomPropertiesSize = Marshal.SizeOf(typeof(RoomProperties));
+        private static readonly int roomPropertiesSize = FMOD.MarshalHelper.SizeOf(typeof(RoomProperties));
 
         // Plugin data parameter index for the room properties.
         private static readonly int roomPropertiesIndex = 1;

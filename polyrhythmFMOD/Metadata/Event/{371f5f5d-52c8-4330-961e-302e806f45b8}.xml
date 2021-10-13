@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{371f5f5d-52c8-4330-961e-302e806f45b8}">
 		<property name="name">
 			<value>MainMusic</value>
@@ -8,7 +8,7 @@
 			<value>5</value>
 		</property>
 		<relationship name="folder">
-			<destination>{564d057d-14ec-4663-9402-2dfde98a5f36}</destination>
+			<destination>{7caafed5-8bfb-4f6b-bbea-3d0a946990d7}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{39281cc3-10ea-463b-8fcb-fbf5006c1ed3}</destination>
@@ -135,8 +135,8 @@
 			<value>2</value>
 		</property>
 		<relationship name="sounds">
-			<destination>{93a0dbe6-8d8d-48f5-9f3e-b0f5e0f8f275}</destination>
 			<destination>{a91f3963-a3a4-4e45-9d57-b2bb740e8475}</destination>
+			<destination>{3c82c2c6-dc6b-4ed8-bc62-34f7f7ea4ba2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d4ab8650-5bea-4e80-8a3f-9f6f53f9c437}" />
@@ -147,17 +147,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{dc9de21b-635e-4833-b8c0-b5524952e70a}" />
 	<object class="MixerBusFader" id="{07a4b73c-d03c-41f5-a777-231b91cc6551}" />
-	<object class="EventSound" id="{93a0dbe6-8d8d-48f5-9f3e-b0f5e0f8f275}">
-		<relationship name="event">
-			<destination>{771102d2-d4a7-4c37-bfe5-bbe93c220e15}</destination>
-		</relationship>
-	</object>
 	<object class="EventSound" id="{a91f3963-a3a4-4e45-9d57-b2bb740e8475}">
 		<relationship name="parameters">
 			<destination>{c25a30af-a43d-4e94-99a1-546eac2b1fdd}</destination>
 		</relationship>
 		<relationship name="event">
 			<destination>{1a71ff99-3f81-47eb-85e1-f690200be7b3}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{3c82c2c6-dc6b-4ed8-bc62-34f7f7ea4ba2}">
+		<relationship name="event">
+			<destination>{ac36e0e4-48b1-472a-bb84-d22d76c1f4c3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{345dae2b-d757-42da-90b3-269f81e67df6}" />

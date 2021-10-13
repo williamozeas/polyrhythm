@@ -161,7 +161,7 @@ public class StyleManager : MonoBehaviour
             //32 - turqoise bg
             new Style("#388697", "#5E277C", "#42D9DB", "#25D9D9", "#63A088"),
             //33 - blue bg
-            new Style("#388697", "#5E277C", "#6342DB", "#4C25D9", "#63A088"),
+            new Style("#388697", "#5E277C", "#4421C2", "#4421C2", "#63A088"),
             //34 - pink bg
             new Style("#388697", "#5E277C", "#C442DB", "#D92594", "#63A088"),
             //35 - red bg
@@ -176,11 +176,50 @@ public class StyleManager : MonoBehaviour
             new Style ("#DD99BB", "#7B506F", "#A19291", "#A19291", "EAD7D1"),
             //40 - pretty grapes reversed
             new Style ("#DD99BB", "#7B506F", "#9d8e8d", "#0b0916", "EAD7D1"),
-            
-            
-            
-            //## - cool sweater
+            //41 - Final style
+            new Style ("#4BD2B9", "#61D1CF", "#841C26", "#BA274A", "2191FB"),
+            //42 - Wine Reds
+            new Style ("#841C26", "#BA274A", "#000000", "#011528", "ba274a"),
+            //43 - Light Greens
+            new Style ("#80F095", "#248738", "#000000", "#22070A", "80F095"),
+            //44 - pretty grapes reversed final
+            new Style ("#DD99BB", "#7B506F", "#0b0916", "#0b0916", "EAD7D1"),
+            //45 - pink/green less
+            new Style ("#01851a", "#8c0069", "#000000", "#000000"),
+            //46 - pink/green less
+            new Style ("#00af20", "#e117c5", "#000000", "#000000"),
+            //47 - pink/green
+            new Style ("#38ff49", "#ff38e8", "#000000", "#000000"),
+            //48 - Right Square
+            new Style ( "#000000","#Ea5dE2", "#000000", "#000000"),
+            //49 - Left Square
+            new Style ( "#Ea5dE2","#000000", "#000000", "#000000"),
+            //50 - Cotton Candy Clouds 2
+            new Style ("#Ea5dE2", "#60F8FF", "#FAFF60", "#FAFF60"),
+            //51 - cool sweater
             new Style("#ACC196", "#E9EB9E", "#49475B", "#799496", "#14080E"),
+            //52 - green bg
+            new Style("#000000", "#1B182E", "#2FD85C", "#2FD85C", "#2FD85C"),
+            //53 - hole
+            new Style("#2FD85C", "#000000", "#1B182E", "#1B182E", "#1B182E"),
+            //54 - blue bg
+            new Style("#ffffff", "#ffffff", "#2CEAED", "#2CEAED", "#000000"),
+            //55 - green bg
+            new Style("#ffffff", "#ffffff", "#4EE74B", "#4EE74B", "#000000"),
+            //56 - yellow bg
+            new Style("#000000", "#000000", "#F0EA45", "#F0EA45", "#000000"),
+            //57 - red bg
+            new Style("#ffffff", "#ffffff", "#EC4848", "#EC4848", "#000000"),
+            //58 - pink bg
+            new Style("#000000", "#000000", "#EC76EE", "#EC76EE", "#000000"),
+            //59 - pink bg
+            new Style("#000000", "#000000", "#7B77ED", "#7B77ED", "#000000"),
+            //60 - hole 2
+            new Style("#000000", "#000000", "#1B182E", "#1B182E", "#1B182E"),
+            //61 - Final style no bg
+            new Style ("#4BD2B9", "#61D1CF", "#000000", "#000000", "2191FB"),
+            //62 - Final style no right
+            new Style ("#4BD2B9", "#000000", "#000000", "#000000", "2191FB"),
             
             //new Style("#", "#", "#", "#", "#"),
         };

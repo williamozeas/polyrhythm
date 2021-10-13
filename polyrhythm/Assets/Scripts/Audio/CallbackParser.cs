@@ -51,6 +51,8 @@ public class CallbackParser : MonoBehaviour
                 break;
             case "NEXT":
                 GameManager.i.ResetFillPercent();
+                if(symbols.Length > 1)
+                    LoopChange(symbols[1]);
                 break;
             case "COROUTINE":
                 SpecialCoroutine(symbols);
@@ -60,6 +62,9 @@ public class CallbackParser : MonoBehaviour
                 break;
             case "STOP":
                 AudioManager.i.StopMusic();
+                break;
+            case "LOOPCHANGE":
+                LoopChange(symbols[1]);
                 break;
             default:
                 Debug.LogWarning("Incorrect marker!");
@@ -105,6 +110,13 @@ public class CallbackParser : MonoBehaviour
             default:
                 Debug.LogError("Incorrect Coroutine Marker!");
                 break;
+        }
+    }
+
+    private static void LoopChange(string val) {
+        int i = int.Parse(val);
+        if(i == 0 || i == 1) {
+            GameManager.i.IsLoop = i;
         }
     }
 

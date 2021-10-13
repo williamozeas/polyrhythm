@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool debug = false;
     public int score = 0;
     public int song = 0;
+
     [SerializeField]
     private float fillPercent = 0;
     private GameState state;
@@ -16,9 +17,22 @@ public class GameManager : MonoBehaviour
     public GameSettings settings;
     public static event ActionRef<int> OnLeftDrumActivate;
     public static event ActionRef<int> OnRightDrumActivate;
+    public static event ActionRef<int> OnLoopChange;
     public static event Action ResetFill;
     public static event Action StartGame;
+    public static event Action MainMenu;
     public static event Action StartMainMenu;
+
+    private int isLoop = -1;
+    public int IsLoop {
+        get {return isLoop;}
+        set {
+            if(value != isLoop) {
+                OnLoopChange?.Invoke(ref value);
+                isLoop = value;
+            }
+        }
+    }
 
     public LeftDrum leftDrum;
     public RightDrum rightDrum;
@@ -41,6 +55,7 @@ public class GameManager : MonoBehaviour
             state = value;
             switch(state) {
                 case GameState.MAIN_MENU:
+                    MainMenu?.Invoke();
                     score = 0;
                     break;
 
