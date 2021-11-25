@@ -13,10 +13,11 @@ public class HideOnStart : MonoBehaviour
     void Start()
     {
         gameObject.GetComponentsInChildren<Transform>(children);
+        children.RemoveAt(0);
         children.Add(leftButtonCanvas);
         children.Add(rightButtonCanvas);
         GameManager.StartGame += Disable;
-        GameManager.StartMainMenu += Enable;
+        GameManager.MainMenu += Enable;
     }
 
     void Disable() {

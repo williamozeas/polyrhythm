@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
 
     public FMOD.Studio.EventInstance music;
     private FMODCallbackHandler callbackHandler;
+    FMOD.Studio.EventInstance PauseSnapshot;
 
     void Awake()
     {
@@ -26,10 +27,13 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Intro");
         callbackHandler = GetComponent<FMODCallbackHandler>();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Startup");
         GameManager.StartGame += BeginMusic;
+        GameManager.MainMenu += StopMusic;
+        GameManager.MainMenu += Startup;
+        GameManager.Pause += OnPause;
+        GameManager.Unpause += OnUnpause;
+        Startup();
     }
 
     public void BeginMusic() {
@@ -47,17 +51,53 @@ public class AudioManager : MonoBehaviour
     }
 
     public void StopMusic() {
-        music.release();
-        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if(music.isValid()) {
+            music.release();
+            music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnPause() {
+        if(GameManager.i.IsLoop == 0) {
+            StartCoroutine(OnPauseNoLoop());
+        } else {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Paused", 1);
+        }
+    }
+
+    public void OnUnpause() {
+        if(GameManager.i.IsLoop == 0) {
+            OnUnpauseNoLoop();
+        } else {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Paused", 0);
+        }
     }
 
     void OnDestroy() {
         system.release();
+    }
+
+    public void Startup() {
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Intro");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Startup");
+    }
+
+
+    IEnumerator OnPauseNoLoop() {
+        PauseSnapshot = FMODUnity.RuntimeManager.CreateInstance("snapshot:/PauseMusic");
+        PauseSnapshot.start();
+        yield return new WaitForSeconds(2f);
+        music.setPaused(true);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Paused", 1);
+    }
+
+    void OnUnpauseNoLoop() {
+        music.setPaused(false);
+        PauseSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Paused", 0);
+    }
+
+    public void UpdateVolume(float vol) {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Volume", vol);
     }
 }

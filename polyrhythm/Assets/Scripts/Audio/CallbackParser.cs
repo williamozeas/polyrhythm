@@ -66,6 +66,9 @@ public class CallbackParser : MonoBehaviour
             case "LOOPCHANGE":
                 LoopChange(symbols[1]);
                 break;
+            case "END":
+                GameManager.i.State = GameState.END;
+                break;
             default:
                 Debug.LogWarning("Incorrect marker!");
                 Debug.Log(symbols[0]);
@@ -115,9 +118,7 @@ public class CallbackParser : MonoBehaviour
 
     private static void LoopChange(string val) {
         int i = int.Parse(val);
-        if(i == 0 || i == 1) {
-            GameManager.i.IsLoop = i;
-        }
+        GameManager.i.IsLoop = i;
     }
 
     private static void Style(string[] symbols) {

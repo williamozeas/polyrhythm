@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { MAIN_MENU, GAME, PAUSE}
+public enum GameState { MAIN_MENU, GAME, PAUSE, END }
 
 public class GameManager : MonoBehaviour
 {
     public bool debug = false;
     public int score = 0;
     public int song = 0;
+    public float time = 0;
 
     [SerializeField]
     private float fillPercent = 0;
@@ -21,9 +22,14 @@ public class GameManager : MonoBehaviour
     public static event Action ResetFill;
     public static event Action StartGame;
     public static event Action MainMenu;
-    public static event Action StartMainMenu;
+    public static event Action EndGame;
+    public static event Action Pause;
+    public static event Action Unpause;
+
 
     private int isLoop = -1;
+    //IsLoop = 0 is no loop
+    //IsLoop = 1 is loop
     public int IsLoop {
         get {return isLoop;}
         set {
@@ -52,36 +58,58 @@ public class GameManager : MonoBehaviour
             return state;
         }
         set {
-            state = value;
-            switch(state) {
+            if(state == GameState.PAUSE) {
+                Unpause?.Invoke();
+            }
+            switch(value) {
                 case GameState.MAIN_MENU:
-                    MainMenu?.Invoke();
-                    score = 0;
+                    if(state != GameState.PAUSE){ 
+                        MainMenu?.Invoke();
+                        fillPercent = 0;
+                        CallbackParser.Parse("STYLE 0 NONE Add");
+                        score = 0;
+                        time = 0;
+                    }
                     break;
-
                 case GameState.GAME:
-                    song = 1;
-                    StartGame?.Invoke();
-                    score = 0;
+                    if(state == GameState.MAIN_MENU)
+                    {
+                        song = 1;
+                        StartGame?.Invoke();
+                        score = 0;
+                        time = 0;
+                    }
                     break;
 
                 case GameState.PAUSE:
-                    break;    
+                    Pause?.Invoke();
+                    break; 
+
+                case GameState.END:
+                    if(state != GameState.PAUSE){ 
+                        EndGame?.Invoke();
+                    }
+                    break;
             }
+            state = value;
         }
     }
 
     private void Start() {
         i = this;
         State = GameState.MAIN_MENU;
+        MainMenu?.Invoke();
         settings = new GameSettings();
         leftDrum = GameObject.Find("Left Drum").GetComponent<LeftDrum>();
         rightDrum = GameObject.Find("Right Drum").GetComponent<RightDrum>();
     }
 
     void Update() {
-        Decay();
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fill Percent", fillPercent);
+        if(State == GameState.GAME) {
+            Decay();
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fill Percent", fillPercent);
+            time += Time.deltaTime;
+        }
     }
 
     void Decay() {

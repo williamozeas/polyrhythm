@@ -7,6 +7,9 @@ public class LoopIcons : MonoBehaviour
 {
     public Image LoopSymbol;
     public Image ForwardSymbol;
+    public Image EmptyImage;
+
+    private Image currentSymbol;
     private int isLoop;
     private RectTransform rectTransform;
     
@@ -16,6 +19,7 @@ public class LoopIcons : MonoBehaviour
         DisableIcons();
         GameManager.OnLoopChange += SetSymbol;
         GameManager.MainMenu += DisableIcons;
+        currentSymbol = EmptyImage;
     }
 
     public void SetSymbol(ref int i) {
@@ -32,16 +36,19 @@ public class LoopIcons : MonoBehaviour
 
     IEnumerator SetSymbolCR() {
         Image inImage;
-        Image outImage;
-        Vector3 inStart = new Vector3(-1200, -68, 0);
-        Vector3 midPos = new Vector3(-100, -68, 0);
-        Vector3 outEnd = new Vector3(300, -68, 0); 
+        Image outImage = currentSymbol;
+        Vector3 inStart = new Vector3(-1200, -52, 0);
+        Vector3 midPos = new Vector3(-62, -52, 0);
+        Vector3 outEnd = new Vector3(300, -52, 0); 
         if(isLoop == 1) {
             inImage = LoopSymbol;
-            outImage = ForwardSymbol;
-        } else {
+            outImage = currentSymbol;
+        } else if(isLoop == 0) {
             inImage = ForwardSymbol;
-            outImage = LoopSymbol;
+            outImage = currentSymbol;
+        } else {
+            inImage = EmptyImage;
+            outImage = currentSymbol;
         }
         inImage.enabled = true;
         float timeElapsed = 0;
@@ -58,6 +65,7 @@ public class LoopIcons : MonoBehaviour
         }
         inImage.rectTransform.anchoredPosition = midPos;
         outImage.rectTransform.anchoredPosition = outEnd;
+        currentSymbol = inImage;
     }
 
 }

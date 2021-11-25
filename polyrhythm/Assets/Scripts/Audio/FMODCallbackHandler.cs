@@ -53,8 +53,8 @@ public class FMODCallbackHandler : MonoBehaviour
 
     void OnGUI()
     {
-        if(timelineInfo != null)
-        GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentMusicBar, (string)timelineInfo.lastMarker));
+        // if(timelineInfo != null)
+        // GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentMusicBar, (string)timelineInfo.lastMarker));
     }
 
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]

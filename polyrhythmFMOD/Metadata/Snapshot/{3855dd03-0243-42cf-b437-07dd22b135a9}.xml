@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Snapshot" id="{3855dd03-0243-42cf-b437-07dd22b135a9}">
+		<property name="name">
+			<value>PauseMusic</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{041cb504-19c2-462c-b9c7-a320b753d3ec}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{9031a1a1-3ab4-442e-b131-d47188101bd0}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{12526f6b-8db5-4ae1-a83b-aab87e0ec1c2}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{bee5c5f2-f5bf-4b49-8465-8e3fda217da7}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{8a9b7405-b19a-4cdb-bd63-c540d9025da4}</destination>
+		</relationship>
+		<relationship name="snapshotProperties">
+			<destination>{4874375e-4e11-4205-bbdf-597f172cc493}</destination>
+			<destination>{95d47197-c4e4-4779-a967-7c58ee9fc329}</destination>
+			<destination>{c33b9457-0f3e-40f2-b6dd-e665406a22ba}</destination>
+		</relationship>
+		<relationship name="snapshotTracks">
+			<destination>{145f44bb-22a6-4d0e-b8b0-627b601745a3}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{9031a1a1-3ab4-442e-b131-d47188101bd0}" />
+	<object class="MarkerTrack" id="{12526f6b-8db5-4ae1-a83b-aab87e0ec1c2}" />
+	<object class="Timeline" id="{bee5c5f2-f5bf-4b49-8465-8e3fda217da7}" />
+	<object class="SnapshotMasterTrack" id="{8a9b7405-b19a-4cdb-bd63-c540d9025da4}" />
+	<object class="SnapshotProperty" id="{4874375e-4e11-4205-bbdf-597f172cc493}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{a623e548-e856-48cf-bb11-bb3c8eb8c44c}</destination>
+		</relationship>
+		<relationship name="automatableObject">
+			<destination>{3934718a-0f72-4f21-9917-059ab28a1d5a}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{95d47197-c4e4-4779-a967-7c58ee9fc329}">
+		<property name="propertyName">
+			<value>frequencyA</value>
+		</property>
+		<property name="value">
+			<value>220</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{ec411f4a-0c47-4d01-9f36-7354a86567f6}</destination>
+		</relationship>
+		<relationship name="automatableObject">
+			<destination>{694b50e2-c113-4801-a88b-e0d45aeed27e}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{c33b9457-0f3e-40f2-b6dd-e665406a22ba}">
+		<property name="propertyName">
+			<value>qualityA</value>
+		</property>
+		<property name="value">
+			<value>2.5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{285107a8-e0c7-467b-aaa4-8f776ecb70ff}</destination>
+		</relationship>
+		<relationship name="automatableObject">
+			<destination>{694b50e2-c113-4801-a88b-e0d45aeed27e}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{145f44bb-22a6-4d0e-b8b0-627b601745a3}">
+		<relationship name="mixerStrip">
+			<destination>{3934718a-0f72-4f21-9917-059ab28a1d5a}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{a623e548-e856-48cf-bb11-bb3c8eb8c44c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>value</value>
+		</property>
+		<property name="attackTime">
+			<value>2000</value>
+		</property>
+		<property name="peakValue">
+			<value>-80</value>
+		</property>
+		<property name="sustainValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{ec411f4a-0c47-4d01-9f36-7354a86567f6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>value</value>
+		</property>
+		<property name="initialValue">
+			<value>100</value>
+		</property>
+		<property name="finalValue">
+			<value>100</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{285107a8-e0c7-467b-aaa4-8f776ecb70ff}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>value</value>
+		</property>
+		<property name="initialValue">
+			<value>-8.8888855</value>
+		</property>
+		<property name="releaseTime">
+			<value>1403.84619</value>
+		</property>
+		<property name="finalValue">
+			<value>-11.1111069</value>
+		</property>
+	</object>
+</objects>

@@ -11,6 +11,8 @@ public class InputHandler : MonoBehaviour
     public static event Action LeftDrumPress;
     public static event Action RightDrumPress;
 
+    private GameState prevState;
+
     private void Start() {
         instance = this;
     }
@@ -21,29 +23,49 @@ public class InputHandler : MonoBehaviour
             if(GameManager.i.State == GameState.MAIN_MENU) {
                 GameManager.i.State = GameState.GAME;
             }
+            if(GameManager.i.State == GameState.END) {
+                GameManager.i.State = GameState.MAIN_MENU;
+            }
             LeftDrumPress?.Invoke();
         }
         if(Input.GetKeyDown(rightDrumKey)) {
+            if(GameManager.i.State == GameState.END) {
+                GameManager.i.State = GameState.MAIN_MENU;
+            }
+            if(GameManager.i.State == GameState.MAIN_MENU) {
+                GameManager.i.State = GameState.PAUSE;
+            }
             RightDrumPress?.Invoke();
         }
 
-
-        if(Input.GetKeyDown(KeyCode.D)) {
-            GameManager.i.debug = !GameManager.i.debug;
-            if(GameManager.i.debug) {
-                Debug.Log("Debug mode Activated!");
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(GameManager.i.State == GameState.PAUSE) {
+                GameManager.i.State = prevState;
             } else {
-                Debug.Log("Debug mode deactivated!");
+                prevState = GameManager.i.State;
+                GameManager.i.State = GameState.PAUSE;
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.F)) {
-            GameManager.i.FillPercent = 1f;
-        }
+        //DEBUG
+        #if UNITY_EDITOR
+            if(Input.GetKeyDown(KeyCode.D)) {
+                GameManager.i.debug = !GameManager.i.debug;
+                if(GameManager.i.debug) {
+                    Debug.Log("Debug mode Activated!");
+                } else {
+                    Debug.Log("Debug mode deactivated!");
+                }
+            }
 
-        if(Input.GetKeyDown(KeyCode.S)) {
-            current = (current + 1)%2;
-            StyleManager.i.ChangeStyle(StyleManager.Styles[current], StyleTransition.CircleGrowBotR, StyleDirection.Add, null);
-        }
+            if(Input.GetKeyDown(KeyCode.F)) {
+                GameManager.i.FillPercent = 2f;
+            }
+
+            if(Input.GetKeyDown(KeyCode.S)) {
+                current = (current + 1)%2;
+                StyleManager.i.ChangeStyle(StyleManager.Styles[current], StyleTransition.CircleGrowBotR, StyleDirection.Add, null);
+            }
+        #endif
     }
 }

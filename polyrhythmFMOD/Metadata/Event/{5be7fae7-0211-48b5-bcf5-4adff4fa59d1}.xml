@@ -907,7 +907,7 @@
 			<value>0.018382352941176461</value>
 		</property>
 		<property name="name">
-			<value>SETTINGS 0.045 0 0.3 0.03 0.01</value>
+			<value>SETTINGS 0.045 0 0.3 0.005 0</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{004c8178-b0d1-4004-b048-d501464f17b6}</destination>
@@ -935,7 +935,7 @@
 			<value>9.4301470588235272</value>
 		</property>
 		<property name="name">
-			<value>SETTINGS 0.03 0 0.3 0.02 0.01</value>
+			<value>SETTINGS 0.03 0 0.3 0.002 0</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{004c8178-b0d1-4004-b048-d501464f17b6}</destination>
@@ -946,10 +946,10 @@
 	</object>
 	<object class="NamedMarker" id="{c7f9c84c-2dc9-4403-a253-aa3609cbb265}">
 		<property name="position">
-			<value>18.841911764705888</value>
+			<value>18.861361422262874</value>
 		</property>
 		<property name="name">
-			<value>SETTINGS 0.015 0 0.3 0.01 0.01</value>
+			<value>SETTINGS 0.02 0 0.3 0 0</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{004c8178-b0d1-4004-b048-d501464f17b6}</destination>
@@ -963,7 +963,7 @@
 			<value>23.547794117647065</value>
 		</property>
 		<property name="name">
-			<value>SETTINGS 0.01 0 0.3 0.005 0</value>
+			<value>SETTINGS 0.015 0 0.3 0 0</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{004c8178-b0d1-4004-b048-d501464f17b6}</destination>

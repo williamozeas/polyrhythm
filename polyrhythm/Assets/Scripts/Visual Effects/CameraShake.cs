@@ -29,6 +29,8 @@ public class CameraShake : MonoBehaviour
     private float trauma;
     private float z;
 
+    private float shakeMultiplier = 1f;
+
     private void Awake()
     {
         // Seed for noise generator
@@ -73,7 +75,7 @@ public class CameraShake : MonoBehaviour
     }
 
     public void Shake(int intensity) {
-        trauma = intensity/5f;
+        trauma = shakeMultiplier * intensity/5f;
     }
 
     public void StartShaking(float traumaIn) {
@@ -93,5 +95,9 @@ public class CameraShake : MonoBehaviour
 
     public void UnBlackScreen() {
         cam.cullingMask = originalCullingMask;
+    }
+
+    public void UpdateShake(float value) {
+        shakeMultiplier = value;
     }
 }

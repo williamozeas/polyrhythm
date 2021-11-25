@@ -12,6 +12,7 @@ public class StyleManager : MonoBehaviour
     public static StyleManager i; 
     public static Style[] style = new Style[2];
     public static int activeSide = 0;
+    Coroutine currentLerp;
 
 
     public static event ActionRef<StyleTransition> OnStyleChange;
@@ -28,15 +29,17 @@ public class StyleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.MainMenu += reset;
         activeSide = 0;
     }
 
     public void ChangeStyle(Style newStyle, StyleTransition transition, StyleDirection direction, string[] args) {
+        
         if(transition == StyleTransition.None) {
             style[activeSide] = newStyle;
             OnStyleChange?.Invoke(ref transition); //in these cases the SetColor fn will take care of the transition
         } else if(transition == StyleTransition.Fade) {
-            StartCoroutine(LerpColor(style[activeSide], newStyle, float.Parse(args[4])));
+            currentLerp = StartCoroutine(LerpColor(style[activeSide], newStyle, float.Parse(args[4])));
         } else {
             style[(activeSide + 1) % 2] = newStyle;
             ChangeStyle(transition, direction, args);
@@ -220,6 +223,8 @@ public class StyleManager : MonoBehaviour
             new Style ("#4BD2B9", "#61D1CF", "#000000", "#000000", "2191FB"),
             //62 - Final style no right
             new Style ("#4BD2B9", "#000000", "#000000", "#000000", "2191FB"),
+            //63 - End Screen
+            new Style ("#000000", "#000000", "#000000", "#000000", "FFFFFF"),
             
             //new Style("#", "#", "#", "#", "#"),
         };
@@ -227,6 +232,11 @@ public class StyleManager : MonoBehaviour
 
     public static Style[] Styles {
         get {return styles;} private set{}
+    }
+
+    public void reset() {
+        if(currentLerp != null) 
+            StopCoroutine(currentLerp);
     }
 
     

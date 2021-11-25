@@ -30,12 +30,15 @@ public class Drum : MonoBehaviour
 
     public virtual void OnPress() {
         visuals.OnPress();
-        if(active) {
-            OnHit(intensity);
-        } else {
-            //StartCoroutine("HoldHit");
-            OnMiss();
+        if(GameManager.i.State == GameState.GAME) {
+            if(active) {
+                OnHit(intensity);
+            } else {
+                //StartCoroutine("HoldHit");
+                OnMiss();
+            }
         }
+            
     }
 
     public virtual void OnMiss() {

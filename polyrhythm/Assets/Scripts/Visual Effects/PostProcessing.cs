@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class PostProcessing : MonoBehaviour
 {
     public static PostProcessing i;
+
+    private float glowMultiplier = 1f;
     private VolumeProfile volume;
     private ChromaticAberration chromatic;
     private Bloom bloom;
@@ -22,7 +24,11 @@ public class PostProcessing : MonoBehaviour
         volume.TryGet<Bloom>(out bloom);
     }
 
-    
+    public void UpdateGlow(float newGlow = 1f) {
+        glowMultiplier = newGlow;
+        bloom.intensity.value = 1f + 1.75f * glowMultiplier;
+    }
+
 
     private Coroutine chromaticChange;
     public void OnHit(int intensity) {

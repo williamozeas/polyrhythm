@@ -16,6 +16,11 @@ public class SpecialAudioFunctions : MonoBehaviour
 
     void Start() {
         Coroutines[0] = IntroCR;
+        GameManager.MainMenu += reset;
+    }
+
+    void Update() {
+        Debug.Log(introMeasurePart);
     }
 
     public void Special(string[] args) {
@@ -52,13 +57,13 @@ public class SpecialAudioFunctions : MonoBehaviour
         new GameSettings(0.014f, 0, 0.7f, 0.01f, 0.008f), //0.1
         new GameSettings(0.013f, 0, 0.5f, 0.01f, 0.008f), //0.2
         new GameSettings(0.012f, 0, 0.5f, 0.01f, 0.008f), //0.3
-        new GameSettings(0.01f, 0, 0.45f, 0.01f, 0.008f), //0.4
-        new GameSettings(0.009f, 0, 0.45f, 0.01f, 0.008f), //0.5
-        new GameSettings(0.008f, 0, 0.4f, 0.01f, 0.008f), //0.6
-        new GameSettings(0.007f, 0, 0.4f, 0.01f, 0.008f), //0.7
-        new GameSettings(0.006f, 0, 0.4f, 0.01f, 0.008f), //0.8
-        new GameSettings(0.005f, 0, 0.4f, 0.01f, 0.008f), //0.9
-        new GameSettings(0.004f, 0, 0.4f, 0.0f, 0.006f), //1
+        new GameSettings(0.011f, 0, 0.45f, 0.01f, 0.008f), //0.4
+        new GameSettings(0.0105f, 0, 0.45f, 0.01f, 0.008f), //0.5
+        new GameSettings(0.009f, 0, 0.4f, 0.01f, 0.008f), //0.6
+        new GameSettings(0.008f, 0, 0.4f, 0.01f, 0.008f), //0.7
+        new GameSettings(0.007f, 0, 0.4f, 0.01f, 0.008f), //0.8
+        new GameSettings(0.006f, 0, 0.4f, 0.01f, 0.008f), //0.9
+        new GameSettings(0.005f, 0, 0.4f, 0.0f, 0.006f), //1
 
     };
 
@@ -105,6 +110,11 @@ public class SpecialAudioFunctions : MonoBehaviour
             AudioManager.i.music.setParameterByName("Chord", 0);
             introMeasureReset = false;
         }
+    }
+
+    public void reset() {
+        introMeasurePart = 0;
+        introMeasureReset = false;
     }
 
 
