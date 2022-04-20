@@ -1,0 +1,76 @@
+Date : 2021-12-17 15:06:36
+Directory : /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts
+Total : 45 files,  3215 codes, 346 comments, 613 blanks, all 4174 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C#       |         45 |      3,215 |        346 |        613 |      4,174 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |         45 |      3,215 |        346 |        613 |      4,174 |
+| Audio                                                                                                                     |          4 |        448 |         27 |         61 |        536 |
+| Game Flow                                                                                                                 |          3 |        220 |          9 |         38 |        267 |
+| Objects                                                                                                                   |          4 |        154 |          6 |         37 |        197 |
+| UI                                                                                                                        |          7 |        177 |          6 |         45 |        228 |
+| Visual Effects                                                                                                            |         21 |      1,222 |         92 |        205 |      1,519 |
+| Visual Effects/Color Masks                                                                                                |         10 |        485 |          3 |         75 |        563 |
+| lib                                                                                                                       |          4 |        988 |        101 |        223 |      1,312 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                  | language | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Audio/AudioManager.cs                           | C#       |         86 |          1 |         17 |        104 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Audio/CallbackParser.cs                         | C#       |        187 |         13 |         13 |        213 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Audio/FMODCallbackHandler.cs                    | C#       |         73 |         10 |         14 |         97 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Audio/SpecialAudioFunctions.cs                  | C#       |        102 |          3 |         17 |        122 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Debug.cs                                        | C#       |          0 |        105 |          1 |        106 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Game Flow/GameManager.cs                        | C#       |        131 |          2 |         22 |        155 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Game Flow/GameSettings.cs                       | C#       |         28 |          6 |          6 |         40 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Game Flow/InputHandler.cs                       | C#       |         61 |          1 |         10 |         72 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Hit.cs                                          | C#       |          6 |          0 |          3 |          9 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Objects/Drum.cs                                 | C#       |         80 |          2 |         13 |         95 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Objects/Fill.cs                                 | C#       |         40 |          2 |         11 |         53 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Objects/LeftDrum.cs                             | C#       |         17 |          1 |          7 |         25 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Objects/RightDrum.cs                            | C#       |         17 |          1 |          6 |         24 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/HideOnStart.cs                               | C#       |         30 |          1 |          7 |         38 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/PauseOverlay.cs                              | C#       |         44 |          1 |         10 |         55 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/SetColorTextMesh.cs                          | C#       |         15 |          0 |          4 |         19 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/SetTimeText.cs                               | C#       |         30 |          1 |          6 |         37 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/SettingsSlider.cs                            | C#       |         22 |          1 |          7 |         30 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/ShowOnEnd.cs                                 | C#       |         18 |          1 |          6 |         25 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/UI/ShowOnPause.cs                               | C#       |         18 |          1 |          5 |         24 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/CameraShake.cs                   | C#       |         66 |         14 |         24 |        104 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/CircleGrowBotL.cs    | C#       |         59 |          0 |          8 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/CircleGrowBotR.cs    | C#       |         59 |          0 |          8 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/CircleGrowCenter.cs  | C#       |         59 |          0 |          8 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/CircleGrowTopL.cs    | C#       |         59 |          0 |          8 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/CircleGrowTopR.cs    | C#       |         59 |          0 |          8 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/ColorMask.cs         | C#       |         14 |          1 |          5 |         20 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/ColorMaskTesting.cs  | C#       |         20 |          2 |          4 |         26 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/HorizontalDoorsCM.cs | C#       |         60 |          0 |         10 |         70 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/StraightWipeLCM.cs   | C#       |         48 |          0 |          8 |         56 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Color Masks/StraightWipeRCM.cs   | C#       |         48 |          0 |          8 |         56 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/DrumVisuals.cs                   | C#       |        131 |          0 |         25 |        156 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/LoopIcons.cs                     | C#       |         62 |          2 |          8 |         72 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/MaskManager.cs                   | C#       |        136 |          0 |          7 |        143 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/PostProcessing.cs                | C#       |         56 |          4 |          9 |         69 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/SetColor.cs                      | C#       |         27 |          4 |         10 |         41 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/SetColorDrum.cs                  | C#       |         15 |          0 |          3 |         18 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/SetColorParticleSystem.cs        | C#       |         16 |          0 |          5 |         21 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/SetColorText.cs                  | C#       |         16 |          0 |          5 |         21 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/Style.cs                         | C#       |         55 |          0 |         12 |         67 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/Visual Effects/StyleManager.cs                  | C#       |        157 |         65 |         22 |        244 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/lib/CustomDelegates.cs                          | C#       |          5 |          0 |          6 |         11 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/lib/EasingFunctions.cs                          | C#       |        840 |         83 |        187 |      1,110 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/lib/Mathfx.cs                                   | C#       |        126 |         18 |         28 |        172 |
+| /Users/williamozeas/Documents/GitHub/polyrhythm/polyrhythm/Assets/Scripts/lib/VisFx.cs                                    | C#       |         17 |          0 |          2 |         19 |
+| Total                                                                                                                     |          |      3,215 |        346 |        613 |      4,174 |
++---------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
